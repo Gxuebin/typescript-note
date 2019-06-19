@@ -13,7 +13,7 @@ sudo npm install -g typescript
 
 
 
-## 开发我首推 Visual Studio Code（没给我广告费）
+## 开发工具首推 Visual Studio Code（没给我广告费）
 
 我的精彩履历中就提过，我的一个优势是增强了编辑器和 IDE 的功能，包括代码补全、接口提示、跳转到定义、重构等，好用到不要不要的。
 

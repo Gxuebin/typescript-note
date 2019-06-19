@@ -1,6 +1,6 @@
 # Summary
 
-* [Typescript 为什么选择她](Readme.md)
+* [Typescript 为什么选择她](README.md)
 * [Typescript 精彩履历](introduction.md)
 * [Typescript 的成长环境](env.md)
 * [Typescript 原始数据类型](primitive_data.md)
@@ -14,6 +14,4 @@
 * [Typescript 函数类型](function.md)
 * [Typescript 声明文件](declaration_files.md)
 * [Typescript 内置对象](built_in_objects.md)
-
-
 
