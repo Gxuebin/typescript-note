@@ -1,0 +1,65 @@
+{
+  "name": "typescript",
+  "version": "0.1.0",
+  "description": "从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript",
+  "main": "README.md",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "server": "gitbook serve",
+    "build": "gitbook build",
+    "install": "rm -rf node_modules && gitbook install ./",
+    "init": "gitbook init",
+    "eslint": "eslint index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruizhengyun/typescript-tutorial.git"
+  },
+  "keywords": [
+    "typescript",
+    "tutorial",
+    "javascript"
+  ],
+  "author": "ruizhengyun <ruizhengyun@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ruizhengyun/typescript-tutorial/issues"
+  },
+  "homepage": "https://github.com/ruizhengyun/typescript-tutorial#readme",
+  "devDependencies": {
+    "eslint": "^4.11.0",
+    "eslint-plugin-typescript": "^0.8.0",
+    "typescript": "^2.6.1",
+    "typescript-eslint-parser": "^9.0.0"
+  },
+  "dependencies": {
+    "gitbook-plugin-advanced-emoji": "^0.2.2",
+    "gitbook-plugin-anchor-navigation-ex": "^1.0.14",
+    "gitbook-plugin-auto-scroll-table": "0.0.5",
+    "gitbook-plugin-back-to-top-button": "^0.1.4",
+    "gitbook-plugin-chapter-fold": "0.0.4",
+    "gitbook-plugin-code": "^0.1.0",
+    "gitbook-plugin-custom-favicon": "0.0.4",
+    "gitbook-plugin-disqus": "^0.1.0",
+    "gitbook-plugin-donate": "^1.0.2",
+    "gitbook-plugin-emphasize": "^1.1.0",
+    "gitbook-plugin-expandable-chapters": "^0.2.0",
+    "gitbook-plugin-expandable-chapters-small": "^0.1.7",
+    "gitbook-plugin-flexible-alerts": "^1.0.3",
+    "gitbook-plugin-github": "^2.0.0",
+    "gitbook-plugin-insert-logo": "^0.1.5",
+    "gitbook-plugin-lightbox": "^1.1.0",
+    "gitbook-plugin-page-copyright": "^1.0.8",
+    "gitbook-plugin-page-treeview": "^3.0.0",
+    "gitbook-plugin-pageview-count": "^1.0.0",
+    "gitbook-plugin-popup": "0.0.1",
+    "gitbook-plugin-rss": "^3.0.2",
+    "gitbook-plugin-search-pro": "^2.0.2",
+    "gitbook-plugin-sharing-plus": "0.0.2",
+    "gitbook-plugin-splitter": "0.0.8",
+    "gitbook-plugin-tbfed-pagefooter": "0.0.1",
+    "gitbook-plugin-todo": "^0.1.3"
+  }
+}
