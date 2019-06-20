@@ -1,6 +1,6 @@
 {
-  "title": "TypeScript 入门教程",
-  "description": "从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript。",
+  "title": "typescript-tutorial",
+  "description": "近3年，这家伙很火。🔥 到什么程度？一度没朋友，一度让我心头热了（冷笑话）",
   "author": "ruizhengyun <ruizhengyun@gmail.com>",
   "language": "zh-hans",
   "gitbook": "3.2.3",
@@ -31,12 +31,12 @@
     "anchor-navigation-ex"
   ],
   "pluginsConfig": {
-    "favicon": "assets/favicon.ico",
+    "favicon": "http://ruizhengyun.cn/tutorial/typescript/assets/favicon.ico",
     "github": {
       "url": "https://github.com/ruizhengyun/typescript-tutorial"
     },
     "insert-logo": {
-      "url": "/assets/logo.png",
+      "url": "http://ruizhengyun.cn/tutorial/typescript/assets/logo.png",
       "style": "background: none; max-height: 66px; min-height: 66px"
     },
     "sharing": {

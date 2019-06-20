@@ -1,7 +1,4 @@
-# Typescript 的成长环境
-
-
-## 安装
+# 安装
 说到如何使用我了，这个很简单，因为和安装其他 npm 包一样，请看
 
 ```
@@ -13,7 +10,7 @@ sudo npm install -g typescript
 
 
 
-## 开发工具首推 Visual Studio Code（没给我广告费）
+# 开发工具首推 Visual Studio Code（没给我广告费）
 
 我的精彩履历中就提过，我的一个优势是增强了编辑器和 IDE 的功能，包括代码补全、接口提示、跳转到定义、重构等，好用到不要不要的。
 
@@ -24,9 +21,9 @@ sudo npm install -g typescript
 下载安装：https://code.visualstudio.com/
 
 
-## 第一个例子
+# 第一个例子
 
-### 写个 `hello.ts` 来试试。
+## 写个 `hello.ts` 来试试。
 
 ```javascript
 // hello.ts
@@ -48,7 +45,7 @@ hello('typescript');
 ```
 
 
-### 加点语法
+## 加点语法
 
 上面，也没看出和 javascript 有什么不同，不急，咱看 `hello2.ts`
 
@@ -64,11 +61,11 @@ hello2(99);
 
 这里，给参数 `string` 添加了 `: string` 类型注解，指定变量的类型为字符串，`:` 的前后有没有空格都可以。你会发现编辑器中会提示错误
 
-![](./assets/hello2-01.png)
+![](../assets/introduction/hello2-01.png)
 
 然后执行 `tsc hello2.ts`，编译也会出错。说 99 不能作为类型需要是字符串的参数，这是我希望看到的，这波操作 **666**。但是 `hello2.js` 还是编译出来了生成 js 文件了（尽管 `hello2.ts` 书写有问题，但是前面说过我是有包容心的）
 
-![](./assets/hello2-02.png)
+![](../assets/introduction/hello2-02.png)
 
 
 ```javascript
@@ -83,13 +80,13 @@ hello2(99);
 上述例子中，编译出来的 js 并没有什么检查的代码被插入进来，这是因为**我只会进行静态检查，如果发现有错误，编译的时候就会报错（但是我还是生成编译结果）**。
 
 
-## 接下来
+# 接下来
 
 接下来，就要开始**无聊的接口讲解、代码编写和示例测试**。希望你能熬过这段艰难期（也希望你能打心底接受我-Typescript）。
 
 
-## You can
+# You can
 
 [上一篇：Typescript 精彩履历](./introduction.md)
 
-[下一篇：Typescript 原始数据类型](./primitive_data_types.md)
+[下一篇：Typescript 基本类型](../basic/basic.md)

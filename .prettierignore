@@ -1,0 +1,17 @@
+node_modules
+
+*.md
+
+_book
+assets
+
+.DS_Store
+.editorconfig
+.eslintignore
+.gitignore
+.lintmdrc
+.prettierignore
+
+package-lock.json
+
+notes/**/*.js
