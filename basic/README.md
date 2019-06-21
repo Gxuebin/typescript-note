@@ -1,7 +1,7 @@
 # 基础篇
 
-* [Typescript 基本类型](./basic.md)
-* [Typescript 任意值](./any.md)
+* [Typescript 基础类型](./basic.md)
+* [Typescript 进阶类型](./advanced.md)
 * [Typescript 类型推论](./inference.md)
 * [Typescript 类型断言](./assertion.md)
 * [Typescript 联合类型](./union.md)

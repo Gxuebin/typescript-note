@@ -4,7 +4,7 @@
 - 原始数据类型（Primitive data types）
 - 对象类型（Object types）
 
-其中，原始数据类型包括：**布尔值、数字、字符串、null、undefined** 以及 ES6 中的新类型 **Symbol**。本章选择性讲前 5 种还有空值。
+其中，原始数据类型包括：**布尔值、数字、字符串、null、undefined** 以及 ES6 中的新类型 **Symbol**。本章选择性讲前 5 种。
 
 # 布尔值
 
@@ -162,89 +162,8 @@ var bn = null;
 
 从上面 3 个例子，可基本判断，`null` 和 `undefined` 是所有类型的子类型(可以把 `null` 和 `undefined` 赋值给 `number` 等所有类型的变量，也就是赋值没多大意义）。
 
-
-# 空值
-
-在 JavaScript 的世界里是没有**空值**的概念，但在 TypeScript 中，可以用 `void` 表示没有任何返回值的函数。
-
-```typescript
-// void.ts
-function sayTs(): void {
-    console.log('Hello, Typescript');
-}
-
-function sayTs2(): void {
-    return 'Hello, Typescript';
-}
-```
-
-编译前
-
-![](../assets/basic/void-01.png)
-
-编译后
-
-![](../assets/basic/void-02.png)
-
-但还是编译出来了
-
-```javascript
-// void.js
-function sayTs() {
-    console.log('Hello, Typescript');
-}
-function sayTs2() {
-    return 'Hello, Typescript2';
-}
-```
-
-> 问：`void` 与 `null`（或`undefined`）间关系如何？
-
-```typescript
-// void2.ts
-let u: void = undefined;
-let n: void = null;
-```
-
-编译后
-
-```javascript
-// void2.js
-var u = undefined;
-var n = null;
-```
-
-> 问：`void` 与 `string`(`number`、`boolean`)关系如何？
-
-```typescript
-// void3.ts
-let n: void = 1;
-let b: void = false;
-let s: void = '1';
-```
-
-编译前
-
-![](../assets/basic/void3-01.png)
-
-编译后
-
-![](../assets/basic/void3-02.png)
-
-但还是编译出来了
-
-```javascript
-// void3.js
-var vn = 1;
-var vb = false;
-var vs = '1';
-```
-
-总结下，只能将 `undefined`、`null` 和没有返回值的函数赋值给 `void`（空值）类型。
-
-
 # You can
 
 [上一篇：Typescript 的成长环境](../introduction/env.md)
 
-[下一篇：Typescript 任意值](./any.md)
+[下一篇：Typescript 进阶类型](./advanced.md)

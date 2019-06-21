@@ -89,4 +89,4 @@ hello2(99);
 
 [上一篇：Typescript 精彩履历](./introduction.md)
 
-[下一篇：Typescript 基本类型](../basic/basic.md)
+[下一篇：Typescript 基础类型](../basic/basic.md)
