@@ -216,6 +216,8 @@ createObj(false);
 
 不知正在阅读的你是否赞同我的这种思路和书写方式？请留言...
 
+[本次代码 Github](https://github.com/ruizhengyun/typescript-note/tree/feature_v.0.0.3_20190621/notes/2019-06-21)
+
 # You can 
 
 [上一篇：Typescript 基础类型](./basic.md)
