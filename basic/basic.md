@@ -243,6 +243,8 @@ var vs = '1';
 
 总结下，只能将 `undefined`、`null` 和没有返回值的函数赋值给 `void`（空值）类型。
 
+[本次代码 Github](https://github.com/ruizhengyun/typescript-note/tree/feature_v.0.0.2_20190620/notes/2019-06-20)
+
 # You can
 
 [上一篇：Typescript 的成长环境](../introduction/env.md)

@@ -84,6 +84,7 @@ hello2(99);
 
 接下来，就要开始**无聊的接口讲解、代码编写和示例测试**。希望你能熬过这段艰难期（也希望你能打心底接受我-Typescript）。
 
+[本次代码 Github](https://github.com/ruizhengyun/typescript-note/tree/feature_v.0.0.1_20190619/note)
 
 # You can
 

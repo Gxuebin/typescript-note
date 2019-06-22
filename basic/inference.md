@@ -85,6 +85,8 @@ inference2 = 'ts';
 inference2 = 18;
 ```
 
+[本次代码 Github](https://github.com/ruizhengyun/typescript-note/tree/feature_v0.0.4_20190622)
+
 # You can
   
 [上一篇：Typescript 进阶类型](./advanced.md)
