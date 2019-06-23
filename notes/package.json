@@ -1,10 +1,10 @@
 {
   "name": "notes",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "辅助学习typescript",
   "main": "index.js",
   "scripts": {
-    "build": "tsc -w --outDir $npm_package_version/build $npm_package_version/*.ts",
+    "build": "rm -rf $npm_package_version/build && tsc -w --outDir $npm_package_version/build $npm_package_version/*.ts",
     "createDir": "mkdir $npm_package_version"
   },
   "keywords": [],
