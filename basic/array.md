@@ -97,11 +97,10 @@ function arrayArguments2(){
 }
 ```
  
-
 [本次代码 Github](https://github.com/ruizhengyun/typescript-note/tree/feature_v0.0.5_20190623)
 
 # You can
 
-[上一篇：Typescript 对象类型-接口](basic/object_interfaces.md)
+[上一篇：Typescript 对象类型-接口](./object_interfaces.md)
 
-[下一篇：Typescript 函数类型](basic/function.md)
+[下一篇：Typescript 函数类型](./function.md)
