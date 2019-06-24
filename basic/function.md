@@ -250,4 +250,4 @@ function chongzai2(x: number | string): number | string {
 
 [上一篇：Typescript 数组类型](./array.md)
 
-[下一篇：Typescript 声明文件](./declaration_files.md)
+[下一篇：Typescript 内置对象](basic/built_in_objects.md)
