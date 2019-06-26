@@ -73,6 +73,9 @@ Math.join('1', 2);
 在推断 `Math.pow` 类型定义的同时，顺便造了一个 `Math.join`，其输入类型和输出类型都是字符串，随后调用这个方法时参数传了数字类型，因而同 `Math.pow(10, '3')` 错误类似。
 
 
+[本次代码 Github](https://github.com/ruizhengyun/typescript-note/tree/feature_v0.0.7_20190625/notes/0.0.7)
+
+
 # You can
 
 [上一篇：Typescript 函数类型](./function.md)

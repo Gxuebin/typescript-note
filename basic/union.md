@@ -71,7 +71,7 @@ console.log('unionInference number length: ', unionInference.length);
 
 上面例子中，第 2 行（基于这个文件 `unionInference.ts`）`unionInference` （因为 `ts`）被推断为 `string`，所以访问 `length` 属性没有问题；同理，第 6 行（因为 `18`）被推断为 `number`，访问 `length` 自然就报错了。
 
-[本次代码 Github](https://github.com/ruizhengyun/typescript-note/tree/feature_v0.0.4_20190622)
+[本次代码 Github](https://github.com/ruizhengyun/typescript-note/tree/feature_v0.0.4_20190622/notes/0.0.4)
 
 # You can
 

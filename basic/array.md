@@ -97,7 +97,7 @@ function arrayArguments2(){
 }
 ```
  
-[本次代码 Github](https://github.com/ruizhengyun/typescript-note/tree/feature_v0.0.5_20190623)
+[本次代码 Github](https://github.com/ruizhengyun/typescript-note/tree/feature_v0.0.5_20190623/notes/0.0.5)
 
 # You can
 

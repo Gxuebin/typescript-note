@@ -85,7 +85,7 @@ inference2 = 'ts';
 inference2 = 18;
 ```
 
-[本次代码 Github](https://github.com/ruizhengyun/typescript-note/tree/feature_v0.0.4_20190622)
+[本次代码 Github](https://github.com/ruizhengyun/typescript-note/tree/feature_v0.0.4_20190622/notes/0.0.4)
 
 # You can
   

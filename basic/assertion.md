@@ -126,7 +126,7 @@ const assertionGetLength23 = (something: string | boolean): number => {
 可见，**类型断言必须联合类型中的一种，类型断言只是做类型选择，而不是做类型转换**。
 
 
-[本次代码 Github](https://github.com/ruizhengyun/typescript-note/tree/feature_v0.0.4_20190622)
+[本次代码 Github](https://github.com/ruizhengyun/typescript-note/tree/feature_v0.0.4_20190622/notes/0.0.4)
 
 # You can
 
