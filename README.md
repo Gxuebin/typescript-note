@@ -34,6 +34,23 @@
 ![](./assets/stateofjs.png)
 
 
+## 席卷开源社区
+
+前端开源项目 angular、VScode、Vue3.0、Rxjs、TypeScript（本身）、Mobx、deno、Antd 等都采用了 Typescript 开发，React 采用 flowType，和 Typescript。显然，这是大趋势越，包括 Facebook 自家的 Jest 也宣布从 flowType 转向 typeScript。在这些大厂强力带动下，TypeScript 与我势在必行（没有懒得借口了）。
+
+
+## 解决之前什么问题
+
+前端报错前几名中必有 `Uncaught TypeError`，然而这是最最低级且不该犯的错误。我们知道 Javascript 是动态语言，运行时才会报错。
+
+如果采用了 Typescript，完整的类型定义会帮助我们
+- 能够在编码时很好的规避掉；
+- 减少非常多的沟通成本和文档编写成本，最好的文档就是类型嘛（考量一个程序员的自我修养）；
+- 前后端合作便利；
+
+阿里 MidwayJs Team 的负责人在 GMTC 上说 “TypeScript，来帮助我们解决这些质量，习惯，方法上的问题，就拿 midway 团队来说，自从使用了 TypeScript，质量提升的非常明显，平常需要测试很久的代码，几乎不会出现低级的问题，反而暴露出的大多都是逻辑问题。” 同事声称 “ 今年，我们希望新应用全量使用 TS”。
+
+
 
 # 终于
 

@@ -142,4 +142,4 @@ enum Friends4_6 { 张三, 李四 = <any>'30', 王五 = 30 };
 
 [上一篇：Typescript 元祖](./tuple.md)
 
-[下一篇：Typescript 声明文件](./declaration_files.md)
+[下一篇：Typescript 类](./class.md)
