@@ -148,7 +148,7 @@ console.log(animal.name); // undefined
 - `public` 所修饰的属性和方法是公共的，任意使用；
 - `private` 所修饰的属性和方法是私有的，仅供类自身使用；
 - `protected` 所修饰的属性和方法是受保护的，仅供类自身和子类使用；
-- `readonly` 
+- `readonly` 所修饰的属性是只读的，必须在声明时或构造函数里被初始化；
 
 ```typescript
 // class.ts
@@ -230,6 +230,69 @@ console.log(pr.showGender());
 - 无法分配给“gender”，因为它是只读属性；
 
 > 注: 基类的构造函数使用 `this` 的属性之前必须调用 `super()`，这是 Typescript 的一项要求。
+
+# 抽象类
+
+不被实例化，只给基类使用。可用关键字 `Abstract` 定义抽象类和其内部定义的抽象方法。不同于接口，抽象类可以包含成员的实现细节。
+
+```typescript
+// abstract.ts
+abstract class Animal2 {
+    abstract say(): void;
+    move(): void{
+        console.log('移动');
+    }
+}
+```
+
+抽象类中的抽象方法不含具体实现（这点和接口很相似，都定义了方法签名不含方法体），但必须在派生类中实现。
+
+```typescript
+// abstract2.ts
+// 抽象类
+abstract class AbstractPerson {
+    constructor(public name: string, public age: number, public weight: number) { }
+
+    showName(): string {
+        return `我的名字是${this.name}`;
+    }
+
+    abstract showAge(): void;
+}
+
+// 基类
+class Person extends AbstractPerson {
+    constructor(name: string, age: number, weight: number) {
+        super(name, age, weight);
+    }
+    showAge(): void {
+        console.log(`我的年龄${this.age}`)
+    }
+    showWeight(): void {
+        console.log(`我的体重${this.weight}`)
+    }
+}
+
+
+let person1: AbstractPerson;
+let person2: AbstractPerson;
+
+person1 = new AbstractPerson('pr', 30, 110);
+person2 = new Person('pr', 30, 110);
+
+console.log(person2.showName());
+person2.showAge();
+person2.showWeight();
+
+
+// 0.0.9/abstract2.ts:29:11 - error TS2511: Cannot create an instance of an abstract class.
+    // 29 person1 = new AbstractPerson('pr', 30, 110);
+       
+// 0.0.9/abstract2.ts:34:9 - error TS2339: Property 'showWeight' does not exist on type 'AbstractPerson'.
+    // 34 person2.showWeight();
+```
+- 不能给抽象类生成实例；
+- 方法 `showWeight` 在抽象类 `AbstractPerson` 中上不存在；
 
 
 [本次代码 Github](https://github.com/ruizhengyun/typescript-note/tree/feature_v0.0.9_20190629/notes/0.0.9)

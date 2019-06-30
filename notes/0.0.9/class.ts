@@ -17,19 +17,19 @@ class ChinaStar extends Star {
         super(name, age, weight, gender);
     }
 
-    showName(){
+    showName(): string {
         return `我是${this.name}`
     }
 
-    showAge(){
+    showAge(): string {
         return `我实际年龄${this.age}`
     }
 
-    showWeight(){
+    showWeight(): string {
         return `我的体重${this.weight}`
     }
 
-    showGender(){
+    showGender(): string {
         return `我的性别${this.gender}`
     }
 }
@@ -49,4 +49,3 @@ console.log(pr.showName());
 console.log(pr.showAge());
 console.log(pr.showWeight());
 console.log(pr.showGender());
-
