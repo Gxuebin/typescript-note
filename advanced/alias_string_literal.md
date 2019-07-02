@@ -1,8 +1,5 @@
-别名，顾名思义，就是给一个类型起个新名字便于记忆和使用。
-
-# 简单例子
-
-看这让你秒懂并应用
+# 类型别名
+别名，顾名思义，就是给一个类型起个新名字便于记忆和使用。下面例子让你秒懂并应用
 
 ```typescript
 // alias.ts
@@ -35,6 +32,31 @@ console.log(getName(showName())); // pr is a boy
 
 
 [本次代码 Github](https://github.com/ruizhengyun/typescript-note/tree/feature_v0.1.1_20190702/notes/0.1.1)
+
+
+# 字符串字面量类型
+
+它是用来约束只能从定义的字段中取值。
+
+```typescript
+// string.ts
+type EventNames = 'click' | 'scroll' | 'mousemove';
+const handleEvent: (a: Element, b: EventNames) => string = (ele: Element, event: EventNames) => {
+    return `${ele} ${event}`;
+}
+
+handleEvent(document.getElementById('header'), 'scroll');
+handleEvent(document.getElementById('footer'), 'keyup');
+
+// 0.1.1/string.ts:7:48 - error TS2345: Argument of type '"keyup"' is not assignable to parameter of type 'EventNames'.
+    // 7 handleEvent(document.getElementById('footer'), 'keyup');  
+```
+
+上面报错是因为 `keyup` 不在 `EventNames` 中。
+
+发现
+定义**类型别名与字符串字面量类型**用的都是 `type`。
+
 
 # You can
 
