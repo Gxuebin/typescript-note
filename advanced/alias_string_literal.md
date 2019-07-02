@@ -32,3 +32,12 @@ console.log(getName(showName())); // pr is a boy
 发现
 - 创建别名需要使用关键字 `type`；
 - 使用别名通常用在有**联合类型**的场景下；
+
+
+[本次代码 Github](https://github.com/ruizhengyun/typescript-note/tree/feature_v0.1.1_20190702/notes/0.1.1)
+
+# You can
+
+[上一篇：Typescript 类与接口](./class_interfaces.md)
+
+[下一篇：Typescript 泛型](./generics.md)

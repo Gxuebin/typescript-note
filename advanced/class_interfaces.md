@@ -182,6 +182,11 @@ c.interval = 2;
 c.reset();
 ```
 
+[本次代码 Github](https://github.com/ruizhengyun/typescript-note/tree/feature_v0.1.0_20190701/notes/0.1.0)
 
 
+# You can
 
+[上一篇：Typescript 类](./class.md)
+
+[下一篇：Typescript 别名和字符串字面量类型](./alias_string_literal.md)

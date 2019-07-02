@@ -19,7 +19,7 @@
     * [Typescript 枚举](advanced/enum.md)
     * [Typescript 类](advanced/class.md)
     * [Typescript 类与接口](advanced/class_interfaces.md)
-    * [Typescript 别名和字符串](advanced/alias_string_literal.md)
+    * [Typescript 别名和字符串字面量类型](advanced/alias_string_literal.md)
     * [Typescript 泛型](advanced/generics.md)
     * [Typescript 声明文件](advanced/declaration_files.md)
     * [Typescript 声明合并](advanced/declaration_merging.md)
