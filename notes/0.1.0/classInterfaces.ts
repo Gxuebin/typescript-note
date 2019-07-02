@@ -17,8 +17,8 @@ class HuaweiPhone extends Phone implements Photo, Lamp {
     photo(): string {
         return '华为拍照';
     }
-    lampOn() {}
     lampOff(){}
+    lampOn() {}
 }
 
 // 数码相机

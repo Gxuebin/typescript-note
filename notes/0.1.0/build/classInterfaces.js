@@ -26,8 +26,8 @@ var HuaweiPhone = /** @class */ (function (_super) {
     HuaweiPhone.prototype.photo = function () {
         return '华为拍照';
     };
-    HuaweiPhone.prototype.lampOn = function () { };
     HuaweiPhone.prototype.lampOff = function () { };
+    HuaweiPhone.prototype.lampOn = function () { };
     return HuaweiPhone;
 }(Phone));
 // 数码相机

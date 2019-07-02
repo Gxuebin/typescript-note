@@ -35,8 +35,8 @@ class HuaweiPhone extends Phone implements Photo, Lamp {
     photo(): string {
         return '华为拍照';
     }
-    lampOn() {}
     lampOff(){}
+    lampOn() {}
 }
 
 // 数码相机
@@ -59,37 +59,56 @@ class DigitalCamera implements Photo, Lamp {
 - `DigitalCamera` 实现了接口 `Lamp`，可却没有定义里面的方法；
 - 接口 `Phone` 中 `photo` 需要返回 `string`，可是类 `DigitalCamera` 中的 `phone` 没有返回值；
 
-你会发现**一个类可以实现多个接口**。
-
+你会发现
+- **一个类可以实现多个接口**;
+- 类 `HuaweiPhone` 中 `lampOff` 和 `lampOn` 并没有按照接口 `Lamp` 按顺序定义，这说明类型检查器不会检查属性或方法的顺序，只要有相应的属性或方法且类型也是对的就可以了；
 
 # 接口继承接口
 
-我们知道类可以继承类，其实接口也可以传承接口。
+我们知道类可以继承类，其实接口也可以传承接口。这种方式可以灵活地将接口分割到可重用的模块里。
 
 ```typescript
 // classInterfaces2.ts
-// 闪光灯
 interface Lamp {
     lampOn(): void;
     lampOff(): void;
 }
 
+interface wx {
+    wxNumber: number;
+    showWxNumber(): string;
+}
+
 // 拍照
-interface Photo extends Lamp {
+interface Photo extends Lamp, Tel {
     photo(): string;
 }
 
-// 数码相机
-class DigitalCamera implements Photo {
+// 华为手机
+class HuaweiPhone2 implements Photo {
+    public wxNumber: number;
     photo(): string {
-        return '数码拍照';
+        return '华为手机 mate20 pro 拍照就是酷儿';
     }
     lampOn() {};
     lampOff() {};
+    constructor(wxNumber: number) {
+        this.wxNumber = wxNumber;
+    };
+
+    showWxNumber(){
+        return `我的微信号：liferzy`;
+    }
 }
+
+let huaweiPhone = new HuaweiPhone2(13701833766);
+console.log(huaweiPhone.showWxNumber()); // 我的微信号：liferzy
+console.log(huaweiPhone.photo()); // 华为手机 mate20 pro 拍照就是酷儿
 ```
 
-> 注：类 `DigitalCamera` 要记得把方法 `lampOn` 和 `lampOff` 加上。
+你还会发现：一个接口可以继承多个接口，创建出多个接口的合成接口。
+
+> 注：类 `DigitalCamera` 要记得把方法 `lampOn`、`lampOff`、`photo` 和 `showWxNumber` 加上。
 
 # 接口继承类
 
@@ -109,9 +128,60 @@ interface Xyz extends Xy {
 let xyz: Xyz = { x: 1, y: 2, z: 3 };
 ```
 
-# 混合类型
+# 函数类型
+在 [Typescript 函数类型](../basic/function.md) 文章中，函数类型表示的招式之一就是接口，其例子是
 
-用接口来定义函数需要的属性
+```typescript
+// function5.ts
+interface Function5 {
+    (x: string, y: string): boolean
+}
+
+let function5: Function5 = (x: string, y: string) => {
+    return x.search(y) > -1;
+}
+```
+
+这里补充下：对于函数类型的类型检查，函数的参数名可以不与接口里定义的参数名一致，比如
+
+```typescript
+// function5_2.ts
+interface Function5_2 {
+    (x: string, y: string): boolean
+}
+
+let function5_2: Function5_2 = (name: string, firstName: string) => {
+    return name.search(firstName) > -1;
+}
+
+console.log(function5_2('pr is a  boy', 'pr')); // true
+```
+
+# 混合（丰富）类型
+
+接口牛逼之处可以描述 JavaScript 里丰富的类型。需求场景有时需要一个对象可以同时具有多种类型。
+
+```typescript
+// classInterfaces5.ts
+interface Counter {
+    (start: number): string;
+    interval: number;
+    reset(): void;
+}
+
+function getCounter(): Counter {
+    const counter = <Counter>function(start: number) {};
+    counter.interval = 1;
+    counter.reset = () => {};
+    return counter;
+}
+
+let c = getCounter();
+c(1);
+c.interval = 2;
+c.reset();
+```
+
 
 
 

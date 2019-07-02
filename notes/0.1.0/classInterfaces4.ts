@@ -7,6 +7,9 @@ interface Info {
 const person = (): Info => {
     const info = <Info>function(name: string, age: number) { }
     info.weight = 33;
+    info.showWeight = () => {
+        return `${}`
+    }
     return info;
 }
 
