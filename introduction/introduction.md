@@ -63,6 +63,6 @@
 
 # You can
 
-[上一篇：Typescript 为什么选择她](../README.md)
+[上一篇：Typescript 为什么选择她](./why.md)
 
 [下一篇：Typescript 的成长环境](./env.md)

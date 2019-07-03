@@ -1,7 +1,8 @@
 # Summary
 
-* [Typescript 为什么选择她](README.md)
+* [Typescript 小书入门篇](README.md)
 * [扫盲篇](introduction/README.md)
+    * [Typescript 为什么选择她](introduction/why.md)
     * [Typescript 精彩履历](introduction/introduction.md)
     * [Typescript 的成长环境](introduction/env.md)
 * [基础篇](basic/README.md)
