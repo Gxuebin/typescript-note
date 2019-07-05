@@ -111,6 +111,31 @@ console.log(generics4_2_2('pr')); // pr
 - 可以使用带有调用签名的对象字面量 `{ <S>(arg: S): S }` 来定义泛型函数;
 - 可以使用泛型接口 `Generics4_2` 来定义泛型函数;
 
+# 泛型类
+
+其实和泛型接口很像，一起看看，顺便对比下
+
+```typescript
+// genericsClass.ts
+class Sum <T>{
+    zero: T;
+    add: (x: T, y: T) => T
+}
+
+const sum = new Sum<number>();
+sum.zero = 0;
+sum.add = (x, y) => (x + y);
+console.log(sum.add(5, 6)); // 11
+
+const sum1 = new Sum<string>();
+sum1.zero = '0';
+sum1.add = (x, y) => (x + y);
+console.log(sum1.add('5', '6')); // 56
+```
+
+- 通过 `sum` 和 `sum1` 你会发现不仅仅限为 `number`，`string` 也可以；
+- 与接口一样，泛型类型放在类后面，可以直观地确认类的属性都在用相同类型；
+
 
 # 泛型约束
 
