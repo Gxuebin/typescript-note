@@ -72,6 +72,66 @@ $('#root')
 
 > 对于社区为哪些第三方库写了声明文件，可在这里查询 [https://microsoft.github.io/TypeSearch/](https://microsoft.github.io/TypeSearch/)
 
+# 声明合并
+
+实际场景中，对于定义了两个相同名字的函数、接口或类，它们会合并成一个类型。
+
+## 函数的合并
+
+看个回文的例子
+
+```typescript
+// functionMerge.ts
+function palindrome(x: string): string;
+function palindrome(x: number): number;
+function palindrome(x: string | number): number | string {
+    if (typeof x === 'number') {
+        return Number(x.toString().split('').reverse().join(''));
+    } else if (typeof x === 'string') {
+        return x.split('').reverse().join('');
+    }
+}
+
+console.log(palindrome('pr18')); // 81rp
+```
+
+## 接口的合并
+
+就是将各接口的属性合并起来。
+
+```typescript
+// interfaceMerge.ts
+interface Station {
+    name?: string;
+    showName(): string;
+}
+interface Station {
+    time: number;
+    showTime(): string;
+    showName(x: string, y: number): string;
+}
+
+let station: Station = {
+    name: '前端工程师',
+    time: 8,
+    showName: function() {
+        return `我是一名${this.name}`;
+    },
+    showTime: () => {
+        return `工作已有${station.time}年了`;
+    }
+}
+
+console.log(station.showName()); // 我是一名前端工程师
+console.log(station.showTime()); // 工作已有8年了
+```
+
+- 接口的属性在多个接口中可重复定义，但**其类型必须唯一**；
+
+## 类的合并
+
+和接口的合并一样，就不写了。
+
 
 # 书写声明文件
 
@@ -124,12 +184,7 @@ declare class DeclareClass {
     name: string;
     constructor(name: string);
     showName(): string;
-    showName2() {
-        return `我是${this.name}`;
-    }
 }
-// 0.1.3/declareClass.d.ts:5:17 - error TS1183: An implementation cannot be declared in ambient contexts.
-    // 5     showName2() {
 ```
 
 ```typescript
@@ -169,7 +224,7 @@ let person = [ DeclareEnum.woman, DeclareEnum.man ];
 ```typescript
 // declareNamespace.d.ts
 declare namespace declareNamespace {
-    const name: string;    
+    const name: string;
     function showName(name: string): void;
     class Gender {
         showGender(gender: string): void;
@@ -187,7 +242,7 @@ declareNamespace.showName('declareNamespace');
 declareNamespace.ns.showNs('ns');
 ```
 
-> 注:在声明对象中可继续嵌入声明对象。
+> 注：在声明对象中可继续嵌入声明对象。
 
 ### `interface` 和 `type`
 
@@ -242,12 +297,217 @@ modal.open('新增', options);
 
 ## npm 包
 
-通过 `import xxx from 'xxx'` 导入，符合 ES6 模块规范。
+通过 `import xxx from 'xxx'` 导入，符合 ES6 模块规范。知道怎么引入 npm 包，还得知道怎么去创建 npm 包。
 
+### 声明文件存放位置
+
+#### 和 npm 包绑定在一起（npm 发布者也提供了声明文件，良心发布者）
+
+场景是当接手一个项目，一是查找其 npm 包可看 `package.json` 中的 `types`，二是查看有无 `xxx/index.d.ts` 声明文件。为了便于自己和他人，请将声明文件和 npm 包绑定在一起（如果以后自己发布 npm 包）。
+
+#### 在社区的 `@types`（没有和 npm 包绑定在一起，由其他人发布）
+
+由于种种情况，有的 npm 包并没有声明文件，这个时候试着安装 xxx（`npm install @types/xxx -S`）来判断 `@types` 是否存在声明文件（为了在 ts 便利使用，其他人补足了对应的声明文件，但只能发布到 `@types` 里）。
+
+#### 上面两种情况都没有找到声明文件，那就得自己动手写声明文件了（靠人不如靠己）
+
+一是创建在 `node_modules/@types/xxx/index.d.ts`，这种方式不需要额外配置（好处），但是 `node_modules` 是不稳定的，因为 `node_modules` 目录不会发布到仓库、无法版本回溯、有删除风险、多人团队应用乱等问题，所以不建议使用；二是创建 `types` 目录，专门存放自己写的声明文件，如 `@types/xxx/index.d.ts`，此刻需要 `tsconfig.json` 配合，成功规避掉第一种方法产生的问题；
+
+#### 目录如下（最简单清爽但实用）
+
+```javascript
+project
+├── src
+|  └── index.ts
+├── types
+|  └── xxx
+|     └── index.d.ts
+└── tsconfig.json
+```
+
+#### `tsconfig.json` 内容
+
+```javascript
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "baseUrl": "./",
+        "paths": {
+            "*": ["types/*"]
+        }
+    }
+}
+```
+
+### 声明文件语法
+
+|语法|含义|示例|
+|:-|:-|:-|
+|export| 导出变量 | `types/export/index.d.ts` 和 `0.1.3/export.ts` | 
+|export namespace| 导出对象(含子属性)| `types/export/index.d.ts` 和 `0.1.3/export.ts` |
+|export default| 导出默认(ES6)| `types/exportDefault/*.d.ts` 和 `0.1.3/exportDefault.ts` |
+|export = commonjs| 导出模块| |
+
+#### `export` 导出变量
+
+前面谈到过全局变量的声明文件方式，npm 包声明文件和其有一定区别。
+- 不使用 `declare` 声明全局变量，就只是声明一个普通变量（局部变量）；
+- 声明文件中使用 `export` 导出；
+- 使用文件用 `import` 导入然后使用，这个和 ES6 一样（无学习成本）；
+
+下面就自己创建声明文件，推荐写在 `types` 目录下，后续也是如此。
+
+```typescript
+// types/export/index.d.ts
+export const name: string;
+export function showName(): string;
+export class Star {
+    constructor(name: string);
+    say(): string;
+}
+export enum Gender {
+    woman, 
+    man
+}
+export interface Options {
+    position?: 'TOP' | 'BOTTOM';
+    data?: any;
+}
+export namespace declareNamespace {
+    const name: string;
+    namespace ns {
+        function showNs(name: string): string;
+    }
+}
+```
+
+```typescript
+// 0.1.3/export.ts
+import { name, showName, Star, Gender, Options, declareNamespace } from '../types/export';
+
+console.log(name);
+let myName = showName();
+let newStar = new Star('pr');
+let gender = [Gender.woman, Gender.man];
+let options: Options = {
+    position: 'TOP',
+    data: { name: 'pr', age: 18 }
+}
+console.log(declareNamespace.name);
+declareNamespace.ns.showNs('ns');
+```
+
+#### `export default` 导出默认（ES6）
+
+`export default` 无论是 ES6 还是 Typescript 都是直接默认导出。在 Typescript 中可直接导出 `function`、`class` 和 `interface`。
+
+
+```typescript
+// types/exportDefault/function.d.ts
+export default function showName(): string;
+```
+
+```typescript
+// types/exportDefault/class.d.ts
+export default class Star {
+    constructor(name: string);
+    say(): string;
+}
+```
+
+```typescript
+// types/exportDefault/interface.d.ts
+export default interface Options {
+    position?: 'TOP' | 'BOTTOM';
+    data?: any;
+}
+```
+
+```typescript
+// types/exportDefault/enum.d.ts
+declare enum Gender {
+    woman, 
+    man
+}
+
+export default Gender;
+```
+
+```typescript
+// types/exportDefault/namespace.d.ts
+declare namespace declareNamespace {
+    const name: string;
+    namespace ns {
+        function showNs(name: string): string;
+    }
+}
+
+export default declareNamespace;
+```
+
+
+#### `export =` 导出模块
+
+commonjs 规范中，导出一个模块可以
+
+```javascript
+// 导出整体
+module.exports = xxx;
+
+// 导出单个
+exports.xxx = xxx;
+```
+
+在 Typescript 中，对于 commonjs 模块导出，有多种导入方式
+
+```typescript
+// 导入整体
+const xxx = require('xxx');
+import * as xxx from 'xxx';
+import xxx = require('xxx');
+
+// 导入单个
+const fn = require('xxx').fn;
+import { fn } from 'xxx';
+import fn = xxx.fn;
+```
+> 注：`import ... require` 和 `export =` 都是 Typescript 为了兼容 AMD 规范和 commonjs 规范创建的语法，由于不常用所以也不推荐用。而是推荐使用 ES6 标准的 `export default` 和 `export`(大家都这么用)。
 
 ## UMD 库
 
-既可以通过全局变量形式，也可以通过 npm 包的 `import` 引入。
+通用模块定义（Universal Module Definition），UMD 库指那些可以通过 `<script>` 标签引入，又可以通过 `import` 导入的库。和 npm 包的声明文件不同的是，需要额外声明一个全局变量。
+
+```typescript
+// types/umd/index.d.ts
+export as namespace umd;
+export default umd;
+// export = umd;
+
+declare function umd(): string;
+declare namespace umd {
+    let ns: string;
+    function showNs(ns: number): string;
+}
+```
+
+```typescript
+// 0.1.3/umd.ts
+import umd from '../types/umd';
+
+umd();
+umd.ns = '18';
+umd.showNs(18);
+```
+
+
+## 扩展全局变量
+
+```typescript
+interface String {
+    .
+}
+```
+
 
 
 [本次代码 Github](https://github.com/ruizhengyun/typescript-note/tree/feature_v0.1.3_20190709/notes/0.1.3)
