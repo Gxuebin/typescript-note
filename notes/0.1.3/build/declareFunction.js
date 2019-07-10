@@ -1,0 +1,1 @@
+declareFunc('#root');
