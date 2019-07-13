@@ -3,7 +3,7 @@
         "module": "commonjs",
         "baseUrl": "./",
         "paths": {
-            "*": ["types/*"]
+            "*": ["../types/*"]
         }
     }
 }

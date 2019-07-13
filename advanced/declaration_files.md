@@ -102,18 +102,19 @@ console.log(palindrome('pr18')); // 81rp
 ```typescript
 // interfaceMerge.ts
 interface Station {
-    name?: string;
+    name: string;
+    time: string;
     showName(): string;
 }
 interface Station {
+    name: string;
     time: number;
     showTime(): string;
-    showName(x: string, y: number): string;
 }
 
 let station: Station = {
     name: '前端工程师',
-    time: 8,
+    time: 18,
     showName: function() {
         return `我是一名${this.name}`;
     },
@@ -124,389 +125,46 @@ let station: Station = {
 
 console.log(station.showName()); // 我是一名前端工程师
 console.log(station.showTime()); // 工作已有8年了
+
+// 0.1.3/interfaceMerge.ts:8:5 - error TS2717: Subsequent property declarations must have the same type.  Property 'time' must be of type 'string', but here has type 'number'.
+    // 8     time: number;
+      
+    // 0.1.3/interfaceMerge.ts:3:5
+        // 3     time: string;
+        // 'time' was also declared here.
+
+// 0.1.3/interfaceMerge.ts:14:5 - error TS2322: Type 'number' is not assignable to type 'string'.
+    // 14     time: 18,
+    
+    // 0.1.3/interfaceMerge.ts:3:5
+        // 3     time: string;
+        //   The expected type comes from property 'time' which is declared here on type 'Station'
 ```
 
-- 接口的属性在多个接口中可重复定义，但**其类型必须唯一**；
+上面报错原因是重复定义 `age` 时改变了其类型。可见，接口的属性在多个接口中可重复定义，但**其类型必须唯一**。
 
 ## 类的合并
 
 和接口的合并一样，就不写了。
 
-
-# 书写声明文件
-
-通常，常用的声明文件，社区都帮我们做好了。在此作为笔记分享，还是要了解下当第三方库没有时，自己该如何书写。在动手前，先分析下场景：
-
-## 全局变量
-
-- 最简单直接，通过标签 `<script>` 引入，注入全局变量 `xxx`；
-- `npm install @types/xxx --save-dev` 安装，不许任何配置；
-- 声明文件 `xxx.d.ts` 存放当前项目中，建议和其他 `*.ts` 都存放在 src 目录下（没有生效，可检查 `tsconfig.json` 中的 `file、include、exclude` 等配置）；
- 
-|声明语句|含义|举例|
-|:-|:-|:-|
-|`declare var`、`declare const`、`declare let`|声明 全局变量| declareVar.ts |
-|`declare function`|声明 全局方法| declareFunction.ts |
-|`declare class`|声明 全局类| declareClass.ts |
-|`declare enum`|声明 全局枚举类型| declareEnum.ts |
-|`declare namespace`|声明 全局对象| declareNamespace.ts |
-|`interface`、`type`|声明 全局类型| declareInterface.ts 和 declareType.ts |
-
-### `declare var`、`declare const`、`declare let`
+## 命名空间的合并
 
 ```typescript
-// jQuery2.d.ts
-declare const jQuery2: (selector: string) => any;
-```
-
-```typescript
-// declareVar2.ts
-jQuery2('#root');
-```
-
-### `declare function`
-
-```typescript
-// declareFunction.d.ts
-declare function declareFunc(selector: string): any;
-```
-
-```typescript
-// declareFunction.ts
-declareFunc('#root');
-```
-
-### `declare class`
-
-```typescript
-// declareClass.d.ts
-declare class DeclareClass {
-    name: string;
-    constructor(name: string);
-    showName(): string;
-}
-```
-
-```typescript
-// declareClass.ts
-let declareClass = new DeclareClass('class');
-```
-
-`declare class` 只定义类型，不具体实现（ 例子中 `showName2` 是具体实现所以报错了）。
-
-
-### `declare enum`
-
-```typescript
-// declareEnum.d.ts
-declare enum DeclareEnum {
-    man,
-    woman
-}
-```
-
-```typescript
-// declareEnum.d.ts
-let person = [ DeclareEnum.woman, DeclareEnum.man ];
-```
-
-### `declare namespace`
-
-`namespace` 第一次见，是 ts 早期为了解决模块化造的关键字，顾名思义是命名空间的意思。
-
-> 由来：前面说了 ts 用 `namespace` 解决模块化，那模块化单词是 `module`，可后来 ES6 也是用了 `module`，由于 ts 要兼容 ES6，不得已将 `module` 改为 `namespace`。
-
-> 不建议用：ES6 的出现，ts 不建议再用 `namespace` 来解决模块化问题，而是推荐使用 ES6 的模块化方案（ts 还是很包容的，一切为了程序员的便利）。
-
-> 了解其原理：虽然 `namespace` 不建议用了，但 `declare namespace` 还是常用的，表示全局变量的一个对象，所以就有子属性。
-
-
-```typescript
-// declareNamespace.d.ts
-declare namespace declareNamespace {
-    const name: string;
-    function showName(name: string): void;
-    class Gender {
-        showGender(gender: string): void;
-    }
-    enum Direction { up, right, down, left } 
-    namespace ns {
-        function showNs(name: string): void;
-    }
-}
-```
-
-```typescript
-// declareNamespace.ts
-declareNamespace.showName('declareNamespace');
-declareNamespace.ns.showNs('ns');
-```
-
-> 注：在声明对象中可继续嵌入声明对象。
-
-### `interface` 和 `type`
-
-```typescript
-// interface.d.ts
-interface Options {
-    position?: 'TOP' | 'BOTTOM';
-    data?: any;
+// namespaceMerge.ts
+namespace NamespaceMerge {
+    export function one(){}
 }
 
-declare namespace modal {
-    function open(title: string, options?: Options): void;
-}
-```
-
-```typescript
-// interface.ts
-let options: Options = {
-    position: 'top',
-    data: {
-        width: 200
-    }
+namespace NamespaceMerge {
+    export function two(){}
 }
 
-modal.open('新增', options);
+NamespaceMerge.one();
 ```
 
-上面 `interface` 没什么问题，但是它是暴露在全局类型中的，所以最好存放在 `namespace` 中，可改写为
+这里必须要导出，因为不导出就算是合并了，外面也是访问不到，看下图
 
-```typescript
-// interface2.d.ts
-declare namespace modal {
-    interface Options {
-        position?: 'top' | 'bottom';
-        data?: any;
-    }
-    function open(title: string, options?: Options): void;
-}
-```
-
-```typescript
-// interface2.ts
-let options: modal.Options = {
-    position: 'top',
-    data: {
-        width: 200
-    }
-}
-
-modal.open('新增', options);
-```
-
-## npm 包
-
-通过 `import xxx from 'xxx'` 导入，符合 ES6 模块规范。知道怎么引入 npm 包，还得知道怎么去创建 npm 包。
-
-### 声明文件存放位置
-
-#### 和 npm 包绑定在一起（npm 发布者也提供了声明文件，良心发布者）
-
-场景是当接手一个项目，一是查找其 npm 包可看 `package.json` 中的 `types`，二是查看有无 `xxx/index.d.ts` 声明文件。为了便于自己和他人，请将声明文件和 npm 包绑定在一起（如果以后自己发布 npm 包）。
-
-#### 在社区的 `@types`（没有和 npm 包绑定在一起，由其他人发布）
-
-由于种种情况，有的 npm 包并没有声明文件，这个时候试着安装 xxx（`npm install @types/xxx -S`）来判断 `@types` 是否存在声明文件（为了在 ts 便利使用，其他人补足了对应的声明文件，但只能发布到 `@types` 里）。
-
-#### 上面两种情况都没有找到声明文件，那就得自己动手写声明文件了（靠人不如靠己）
-
-一是创建在 `node_modules/@types/xxx/index.d.ts`，这种方式不需要额外配置（好处），但是 `node_modules` 是不稳定的，因为 `node_modules` 目录不会发布到仓库、无法版本回溯、有删除风险、多人团队应用乱等问题，所以不建议使用；二是创建 `types` 目录，专门存放自己写的声明文件，如 `@types/xxx/index.d.ts`，此刻需要 `tsconfig.json` 配合，成功规避掉第一种方法产生的问题；
-
-#### 目录如下（最简单清爽但实用）
-
-```javascript
-project
-├── src
-|  └── index.ts
-├── types
-|  └── xxx
-|     └── index.d.ts
-└── tsconfig.json
-```
-
-#### `tsconfig.json` 内容
-
-```javascript
-{
-    "compilerOptions": {
-        "module": "commonjs",
-        "baseUrl": "./",
-        "paths": {
-            "*": ["types/*"]
-        }
-    }
-}
-```
-
-### 声明文件语法
-
-|语法|含义|示例|
-|:-|:-|:-|
-|export| 导出变量 | `types/export/index.d.ts` 和 `0.1.3/export.ts` | 
-|export namespace| 导出对象(含子属性)| `types/export/index.d.ts` 和 `0.1.3/export.ts` |
-|export default| 导出默认(ES6)| `types/exportDefault/*.d.ts` 和 `0.1.3/exportDefault.ts` |
-|export = commonjs| 导出模块| |
-
-#### `export` 导出变量
-
-前面谈到过全局变量的声明文件方式，npm 包声明文件和其有一定区别。
-- 不使用 `declare` 声明全局变量，就只是声明一个普通变量（局部变量）；
-- 声明文件中使用 `export` 导出；
-- 使用文件用 `import` 导入然后使用，这个和 ES6 一样（无学习成本）；
-
-下面就自己创建声明文件，推荐写在 `types` 目录下，后续也是如此。
-
-```typescript
-// types/export/index.d.ts
-export const name: string;
-export function showName(): string;
-export class Star {
-    constructor(name: string);
-    say(): string;
-}
-export enum Gender {
-    woman, 
-    man
-}
-export interface Options {
-    position?: 'TOP' | 'BOTTOM';
-    data?: any;
-}
-export namespace declareNamespace {
-    const name: string;
-    namespace ns {
-        function showNs(name: string): string;
-    }
-}
-```
-
-```typescript
-// 0.1.3/export.ts
-import { name, showName, Star, Gender, Options, declareNamespace } from '../types/export';
-
-console.log(name);
-let myName = showName();
-let newStar = new Star('pr');
-let gender = [Gender.woman, Gender.man];
-let options: Options = {
-    position: 'TOP',
-    data: { name: 'pr', age: 18 }
-}
-console.log(declareNamespace.name);
-declareNamespace.ns.showNs('ns');
-```
-
-#### `export default` 导出默认（ES6）
-
-`export default` 无论是 ES6 还是 Typescript 都是直接默认导出。在 Typescript 中可直接导出 `function`、`class` 和 `interface`。
-
-
-```typescript
-// types/exportDefault/function.d.ts
-export default function showName(): string;
-```
-
-```typescript
-// types/exportDefault/class.d.ts
-export default class Star {
-    constructor(name: string);
-    say(): string;
-}
-```
-
-```typescript
-// types/exportDefault/interface.d.ts
-export default interface Options {
-    position?: 'TOP' | 'BOTTOM';
-    data?: any;
-}
-```
-
-```typescript
-// types/exportDefault/enum.d.ts
-declare enum Gender {
-    woman, 
-    man
-}
-
-export default Gender;
-```
-
-```typescript
-// types/exportDefault/namespace.d.ts
-declare namespace declareNamespace {
-    const name: string;
-    namespace ns {
-        function showNs(name: string): string;
-    }
-}
-
-export default declareNamespace;
-```
-
-
-#### `export =` 导出模块
-
-commonjs 规范中，导出一个模块可以
-
-```javascript
-// 导出整体
-module.exports = xxx;
-
-// 导出单个
-exports.xxx = xxx;
-```
-
-在 Typescript 中，对于 commonjs 模块导出，有多种导入方式
-
-```typescript
-// 导入整体
-const xxx = require('xxx');
-import * as xxx from 'xxx';
-import xxx = require('xxx');
-
-// 导入单个
-const fn = require('xxx').fn;
-import { fn } from 'xxx';
-import fn = xxx.fn;
-```
-> 注：`import ... require` 和 `export =` 都是 Typescript 为了兼容 AMD 规范和 commonjs 规范创建的语法，由于不常用所以也不推荐用。而是推荐使用 ES6 标准的 `export default` 和 `export`(大家都这么用)。
-
-## UMD 库
-
-通用模块定义（Universal Module Definition），UMD 库指那些可以通过 `<script>` 标签引入，又可以通过 `import` 导入的库。和 npm 包的声明文件不同的是，需要额外声明一个全局变量。
-
-```typescript
-// types/umd/index.d.ts
-export as namespace umd;
-export default umd;
-// export = umd;
-
-declare function umd(): string;
-declare namespace umd {
-    let ns: string;
-    function showNs(ns: number): string;
-}
-```
-
-```typescript
-// 0.1.3/umd.ts
-import umd from '../types/umd';
-
-umd();
-umd.ns = '18';
-umd.showNs(18);
-```
-
-
-## 扩展全局变量
-
-```typescript
-interface String {
-    .
-}
-```
+![](../assets/advanced/namespaceMerge.png)
 
 
 
@@ -517,8 +175,7 @@ interface String {
 
 [上一篇：TTypescript 泛型](./generics.md)
 
-下一篇：Typescript 声明合并
-
+[下一篇：Typescript 书写声明文件](./declaration_files_write.md)
 
 
 [DefinitelyTyped jQuery]: https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/jquery/JQuery.d.ts

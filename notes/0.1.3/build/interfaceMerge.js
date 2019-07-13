@@ -1,6 +1,6 @@
 var station = {
     name: '前端工程师',
-    time: 8,
+    time: 18,
     showName: function () {
         return "\u6211\u662F\u4E00\u540D" + this.name;
     },

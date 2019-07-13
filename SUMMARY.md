@@ -23,7 +23,7 @@
     * [Typescript 别名和字符串字面量类型](advanced/alias_string_literal.md)
     * [Typescript 泛型](advanced/generics.md)
     * [Typescript 声明文件](advanced/declaration_files.md)
-    * [Typescript 声明合并](advanced/declaration_merging.md)
+    * [Typescript 书写声明合并](advanced/declaration_files_write.md)
 * [实战篇](action/README.md)
 * [附件篇](file/README.md)
 
