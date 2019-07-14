@@ -24,6 +24,7 @@
     * [Typescript 泛型](advanced/generics.md)
     * [Typescript 声明文件](advanced/declaration_files.md)
     * [Typescript 书写声明合并](advanced/declaration_files_write.md)
+* [Typescript 串讲](talk/README.md)
 * [实战篇](action/README.md)
 * [附件篇](file/README.md)
 
