@@ -57,7 +57,7 @@
 感性的认识和理性的选择都推动着去学习和应用，那就来吧。
 
 
-# You can
+# 你可以...
 
 [前端知识沉淀](https://juejin.im/post/5d0878aaf265da1b83338f74?utm_source=gold_browser_extension)
 

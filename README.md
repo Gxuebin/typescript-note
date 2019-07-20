@@ -57,11 +57,11 @@
 感性的认识和理性的选择都推动着去学习和应用，那就来吧。
 
 
-# You can
+# 你可以...
 
 [前端知识沉淀](https://juejin.im/post/5d0878aaf265da1b83338f74?utm_source=gold_browser_extension)
 
-[下一篇：Typescript 精彩履历](./introduction/introduction.md)
+[下一篇：Typescript 为什么选择她](./introduction/why.md)
 
 [Google Trends]: https://trends.google.com/trends/explore?date=2016-05-19%202019-06-19&geo=CN&q=typescript,es6,react,vue,jquery
 [Stack Overflow Treads]: https://insights.stackoverflow.com/trends?tags=typescript%2Creactjs%2Cvuex%2Cecmascript-6%2Cjquery

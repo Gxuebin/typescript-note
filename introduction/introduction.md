@@ -61,7 +61,7 @@
 
 
 
-# You can
+# 你可以...
 
 [上一篇：Typescript 为什么选择她](./why.md)
 
