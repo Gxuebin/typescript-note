@@ -104,7 +104,7 @@ var say = "Hello, " + str;
 
 # null 和 undefined
 
-在 TypeScript 的世界里，`null` 和 `undefined` 可用自身来定义数据类型。不过其用书不大。
+在 TypeScript 的世界里，`null` 和 `undefined` 可用自身来定义数据类型。不过其用处不大。
 
 ```typescript
 // null-undefined.ts
