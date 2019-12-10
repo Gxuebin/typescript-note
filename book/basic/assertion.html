@@ -1,0 +1,759 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Typescript 类型断言 · Typescript 小书</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ruizhengyun <ruizhengyun@gmail.com>">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="object_interfaces.html" />
+    
+    
+    <link rel="prev" href="union.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://ruizhengyun.cn/" target="_blank" class="custom-link">我的博客</a>
+        </li>
+    
+        
+        <li>
+            <a href="http://ruizhengyun.cn/book" target="_blank" class="custom-link">我的小书</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Typescript 小书入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction/">
+            
+                <a href="../introduction/">
+            
+                    
+                    扫盲篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../introduction/why.html">
+            
+                <a href="../introduction/why.html">
+            
+                    
+                    Typescript 为什么选择她
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../introduction/introduction.html">
+            
+                <a href="../introduction/introduction.html">
+            
+                    
+                    Typescript 精彩履历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../introduction/env.html">
+            
+                <a href="../introduction/env.html">
+            
+                    
+                    Typescript 的成长环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    基础篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="basic.html">
+            
+                <a href="basic.html">
+            
+                    
+                    Typescript 基础类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="advanced.html">
+            
+                <a href="advanced.html">
+            
+                    
+                    Typescript 进阶类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="inference.html">
+            
+                <a href="inference.html">
+            
+                    
+                    Typescript 类型推论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="union.html">
+            
+                <a href="union.html">
+            
+                    
+                    Typescript 联合类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.5" data-path="assertion.html">
+            
+                <a href="assertion.html">
+            
+                    
+                    Typescript 类型断言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="object_interfaces.html">
+            
+                <a href="object_interfaces.html">
+            
+                    
+                    Typescript 对象类型-接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="array.html">
+            
+                <a href="array.html">
+            
+                    
+                    Typescript 数组类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="function.html">
+            
+                <a href="function.html">
+            
+                    
+                    Typescript 函数类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="built_in_objects.html">
+            
+                <a href="built_in_objects.html">
+            
+                    
+                    Typescript 内置对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../advanced/">
+            
+                <a href="../advanced/">
+            
+                    
+                    进阶
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../advanced/tuple.html">
+            
+                <a href="../advanced/tuple.html">
+            
+                    
+                    Typescript 元祖
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../advanced/enum.html">
+            
+                <a href="../advanced/enum.html">
+            
+                    
+                    Typescript 枚举
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../advanced/class.html">
+            
+                <a href="../advanced/class.html">
+            
+                    
+                    Typescript 类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../advanced/class_interfaces.html">
+            
+                <a href="../advanced/class_interfaces.html">
+            
+                    
+                    Typescript 类与接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../advanced/alias_string_literal.html">
+            
+                <a href="../advanced/alias_string_literal.html">
+            
+                    
+                    Typescript 别名和字符串字面量类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../advanced/generics.html">
+            
+                <a href="../advanced/generics.html">
+            
+                    
+                    Typescript 泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../advanced/declaration_files.html">
+            
+                <a href="../advanced/declaration_files.html">
+            
+                    
+                    Typescript 声明文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../advanced/declaration_files_write.html">
+            
+                <a href="../advanced/declaration_files_write.html">
+            
+                    
+                    Typescript 书写声明合并
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../action/">
+            
+                <a href="../action/">
+            
+                    
+                    实战篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../file/">
+            
+                <a href="../file/">
+            
+                    
+                    附件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Typescript 类型断言</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x62DB;&#x5F0F;&#x4E00;&#x548C;&#x62DB;&#x5F0F;&#x4E8C;"><b>1. </b>&#x62DB;&#x5F0F;&#x4E00;&#x548C;&#x62DB;&#x5F0F;&#x4E8C;</a></li><li><span class="title-icon "></span><a href="#&#x62FF;&#x4E0A;&#x7BC7;&#x8054;&#x5408;&#x7C7B;&#x578B;&#x4F8B;&#x5B50;&#x4F5C;&#x6559;&#x6750;"><b>2. </b>&#x62FF;&#x4E0A;&#x7BC7;&#x8054;&#x5408;&#x7C7B;&#x578B;&#x4F8B;&#x5B50;&#x4F5C;&#x6559;&#x6750;</a></li><li><span class="title-icon "></span><a href="#&#x601D;&#x7EF4;&#x53D1;&#x6563;"><b>3. </b>&#x601D;&#x7EF4;&#x53D1;&#x6563;</a></li><li><span class="title-icon "></span><a href="#you-can"><b>4. </b>You can</a></li></ul></div><a href="#&#x62DB;&#x5F0F;&#x4E00;&#x548C;&#x62DB;&#x5F0F;&#x4E8C;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p>&#x7C7B;&#x578B;&#x65AD;&#x8A00;&#xFF08;Type Assertion&#xFF09;&#x5C31;&#x662F;&#x624B;&#x52A8;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x503C;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x5177;&#x4F53;&#x770B;&#x770B;&#x600E;&#x4E48;&#x505A;&#x5427;</p>
+<h1 id="&#x62DB;&#x5F0F;&#x4E00;&#x548C;&#x62DB;&#x5F0F;&#x4E8C;"><a name="&#x62DB;&#x5F0F;&#x4E00;&#x548C;&#x62DB;&#x5F0F;&#x4E8C;" class="anchor-navigation-ex-anchor" href="#&#x62DB;&#x5F0F;&#x4E00;&#x548C;&#x62DB;&#x5F0F;&#x4E8C;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x62DB;&#x5F0F;&#x4E00;&#x548C;&#x62DB;&#x5F0F;&#x4E8C;</h1>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x62DB;&#x5F0F;&#x4E00;</span>
+&lt;&#x7C7B;&#x578B;&gt;&#x503C;
+
+<span class="hljs-comment">// &#x62DB;&#x5F0F;&#x4E8C;</span>
+&#x503C; <span class="hljs-keyword">as</span> &#x7C7B;&#x578B;
+</code></pre>
+<p>&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#xFF0C;&#x56E0;&#x4E3A;&#x5728; tsx &#x8BED;&#x6CD5;&#x4E2D;&#x53EA;&#x8BA4;&#x5B83;&#x3002;&#x800C; tsx &#x662F; react &#x7684; jsx &#x8BED;&#x6CD5;&#x7684; ts &#x7248;&#xFF0C;&#x540E;&#x9762;&#x5B9E;&#x6218;&#x7BC7;&#x5E45;&#x5929;&#x5929;&#x89C1;&#xFF0C;&#x522B;&#x7740;&#x6025;&#x3002;</p>
+<h1 id="&#x62FF;&#x4E0A;&#x7BC7;&#x8054;&#x5408;&#x7C7B;&#x578B;&#x4F8B;&#x5B50;&#x4F5C;&#x6559;&#x6750;"><a name="&#x62FF;&#x4E0A;&#x7BC7;&#x8054;&#x5408;&#x7C7B;&#x578B;&#x4F8B;&#x5B50;&#x4F5C;&#x6559;&#x6750;" class="anchor-navigation-ex-anchor" href="#&#x62FF;&#x4E0A;&#x7BC7;&#x8054;&#x5408;&#x7C7B;&#x578B;&#x4F8B;&#x5B50;&#x4F5C;&#x6559;&#x6750;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x62FF;&#x4E0A;&#x7BC7;&#x8054;&#x5408;&#x7C7B;&#x578B;&#x4F8B;&#x5B50;&#x4F5C;&#x6559;&#x6750;</h1>
+<pre><code class="lang-typescript"><span class="hljs-comment">// unionGetLength.ts</span>
+<span class="hljs-keyword">const</span> unionGetLength = (something: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span>): <span class="hljs-built_in">number</span> =&gt; {
+    <span class="hljs-keyword">return</span> something.length;
+}
+
+<span class="hljs-comment">// 0.0.4/unionGetLength.ts:2:22 - error TS2339: Property &apos;length&apos; does not exist on type &apos;string | number&apos;.</span>
+    <span class="hljs-comment">// Property &apos;length&apos; does not exist on type &apos;number&apos;.</span>
+    <span class="hljs-comment">// 2     return something.length;</span>
+</code></pre>
+<p>&#x4E8E;&#x662F;&#x60F3;&#xFF1A;&#x5982;&#x679C;&#x6709; <code>length</code> &#x5C5E;&#x6027;&#x5C31;&#x8FD4;&#x56DE; <code>something.length</code>, &#x6CA1;&#x6709;&#x5C31;&#x8F6C;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x7136;&#x540E;&#x518D;&#x8FD4;&#x56DE; <code>something.length</code> &#x53EF;&#x4E0D;&#x53EF;&#x4EE5;&#x5462;&#xFF1F;</p>
+<pre><code class="lang-typescript"><span class="hljs-comment">// unionGetLength2.ts</span>
+<span class="hljs-keyword">const</span> unionGetLength2 = (something: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span>): <span class="hljs-built_in">number</span> =&gt; {
+    <span class="hljs-keyword">if</span>(something.length){
+        <span class="hljs-keyword">return</span> something.length;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> something.toString().length;
+    }
+}
+
+<span class="hljs-comment">// 0.0.4/unionGetLength2.ts:3:26 - error TS2339: Property &apos;length&apos; does not exist on type &apos;string | number&apos;.</span>
+    <span class="hljs-comment">// Property &apos;length&apos; does not exist on type &apos;number&apos;.</span>
+    <span class="hljs-comment">// 3         return something.length;</span>
+</code></pre>
+<p>&#x731C;&#x60F3;&#x5931;&#x8D25;&#xFF0C;<code>unionGetLength2.ts</code> &#x4E0E; <code>unionGetLength.ts</code> &#x8FD8;&#x662F;&#x4E00;&#x6837;&#x7684;&#x95EE;&#x9898;&#x3002;&#x7136;&#x800C;&#x5230;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x518D;&#x5F80;&#x524D;&#x8FDB;&#x4E00;&#x6B65;&#xFF08;&#x5C31;&#x662F;&#x52A0;&#x4E0A;&#x7C7B;&#x578B;&#x65AD;&#x8A00;&#xFF09;&#xFF0C;&#x5982;</p>
+<pre><code class="lang-typescript"><span class="hljs-comment">// assertionGetLength.ts</span>
+<span class="hljs-keyword">const</span> assertionGetLength = (something: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span>): <span class="hljs-built_in">number</span> =&gt; {
+    <span class="hljs-keyword">if</span>((something as <span class="hljs-built_in">string</span>).length){
+        <span class="hljs-keyword">return</span> (something as <span class="hljs-built_in">string</span>).length;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> something.toString().length;
+    }
+}
+
+<span class="hljs-comment">// &#x6216;</span>
+<span class="hljs-keyword">const</span> assertionGetLengthOther = (something: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span>): <span class="hljs-built_in">number</span> =&gt; {
+    <span class="hljs-keyword">if</span>((&lt;<span class="hljs-built_in">string</span>&gt;something).length){
+        <span class="hljs-keyword">return</span> (&lt;<span class="hljs-built_in">string</span>&gt;something).length;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> something.toString().length;
+    }
+}
+</code></pre>
+<p>&#x7F16;&#x8BD1;&#x540E;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// assertionGetLength.js</span>
+<span class="hljs-keyword">var</span> assertionGetLength = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">something</span>) </span>{
+    <span class="hljs-keyword">if</span> (something.length) {
+        <span class="hljs-keyword">return</span> something.length;
+    }
+    <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> something.toString().length;
+    }
+};
+<span class="hljs-comment">// &#x6216;</span>
+<span class="hljs-keyword">var</span> assertionGetLengthOther = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">something</span>) </span>{
+    <span class="hljs-keyword">if</span> (something.length) {
+        <span class="hljs-keyword">return</span> something.length;
+    }
+    <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> something.toString().length;
+    }
+};
+</code></pre>
+<p>&#x603B;&#x7ED3;&#xFF1A;&#x7C7B;&#x578B;&#x65AD;&#x8A00;&#x7684;&#x7528;&#x6CD5;&#x5C31;&#x662F;&#x5C06;&#x65AD;&#x8A00;&#x7684;&#x53D8;&#x91CF; <code>xx</code> &#x6539;&#x4E3A; <code>(xx as Type)</code> &#x6216; <code>(&lt;Type&gt;xx)</code>&#x3002;</p>
+<h1 id="&#x601D;&#x7EF4;&#x53D1;&#x6563;"><a name="&#x601D;&#x7EF4;&#x53D1;&#x6563;" class="anchor-navigation-ex-anchor" href="#&#x601D;&#x7EF4;&#x53D1;&#x6563;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x601D;&#x7EF4;&#x53D1;&#x6563;</h1>
+<p>&#x4E0A;&#x7BC7;&#x8054;&#x5408;&#x7C7B;&#x578B;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;&#x4E3A; <code>string | number</code>&#xFF0C;&#x5982;&#x679C;&#x7C7B;&#x578B;&#x65AD;&#x8A00;&#x4E0D;&#x662F;&#x4E24;&#x8005;&#x4E2D;&#x5176;&#x4E00;&#x4F1A;&#x600E;&#x6837;&#xFF1F;</p>
+<pre><code class="lang-typescript"><span class="hljs-comment">// assertionGetLength2.ts</span>
+<span class="hljs-keyword">const</span> assertionGetLength2 = (something: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span>): <span class="hljs-built_in">boolean</span> =&gt; {
+    <span class="hljs-keyword">return</span> (something as <span class="hljs-built_in">boolean</span>);
+}
+
+<span class="hljs-keyword">const</span> assertionGetLength21 = (something: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">boolean</span>): <span class="hljs-built_in">string</span> =&gt; {
+    <span class="hljs-keyword">return</span> (something as <span class="hljs-built_in">string</span>);
+}
+
+<span class="hljs-keyword">const</span> assertionGetLength22 = (something: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">boolean</span>): <span class="hljs-built_in">boolean</span> =&gt; {
+    <span class="hljs-keyword">return</span> (something as <span class="hljs-built_in">boolean</span>);
+}
+
+<span class="hljs-keyword">const</span> assertionGetLength23 = (something: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">boolean</span>): <span class="hljs-built_in">number</span> =&gt; {
+    <span class="hljs-keyword">return</span> (something as <span class="hljs-built_in">number</span>);
+}
+
+<span class="hljs-comment">// 0.0.4/assertionGetLength2.ts:2:13 - error TS2352: Conversion of type &apos;string | number&apos; to type &apos;boolean&apos; may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to &apos;unknown&apos; first.</span>
+    <span class="hljs-comment">// Type &apos;number&apos; is not comparable to type &apos;boolean&apos;.</span>
+    <span class="hljs-comment">// 2     return (something as boolean);</span>
+
+<span class="hljs-comment">// 0.0.4/assertionGetLength2.ts:14:13 - error TS2352: Conversion of type &apos;string | boolean&apos; to type &apos;number&apos; may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to &apos;unknown&apos; first.</span>
+    <span class="hljs-comment">// Type &apos;true&apos; is not comparable to type &apos;number&apos;.</span>
+
+    <span class="hljs-comment">// 14     return (something as number);</span>
+</code></pre>
+<p>&#x53EF;&#x89C1;&#xFF0C;<strong>&#x7C7B;&#x578B;&#x65AD;&#x8A00;&#x5FC5;&#x987B;&#x8054;&#x5408;&#x7C7B;&#x578B;&#x4E2D;&#x7684;&#x4E00;&#x79CD;&#xFF0C;&#x7C7B;&#x578B;&#x65AD;&#x8A00;&#x53EA;&#x662F;&#x505A;&#x7C7B;&#x578B;&#x9009;&#x62E9;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x505A;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</strong>&#x3002;</p>
+<p><a href="https://github.com/ruizhengyun/typescript-note/tree/feature_v0.0.4_20190622/notes/0.0.4" target="_blank">&#x672C;&#x6B21;&#x4EE3;&#x7801; Github</a></p>
+<h1 id="you-can"><a name="you-can" class="anchor-navigation-ex-anchor" href="#you-can"><i class="fa fa-link" aria-hidden="true"></i></a>4. You can</h1>
+<p><a href="union.html">&#x4E0A;&#x4E00;&#x7BC7;&#xFF1A;Typescript &#x8054;&#x5408;&#x7C7B;&#x578B;</a></p>
+<p><a href="object_interfaces.html">&#x4E0B;&#x4E00;&#x7BC7;&#xFF1A;Typescript &#x5BF9;&#x8C61;&#x7C7B;&#x578B;-&#x63A5;&#x53E3;</a></p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ruizhengyun.cn 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-07-20 20:37:39
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="union.html" class="navigation navigation-prev " aria-label="Previous page: Typescript 联合类型">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="object_interfaces.html" class="navigation navigation-next " aria-label="Next page: Typescript 对象类型-接口">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Typescript 类型断言","level":"1.3.5","depth":2,"next":{"title":"Typescript 对象类型-接口","level":"1.3.6","depth":2,"path":"basic/object_interfaces.md","ref":"basic/object_interfaces.md","articles":[]},"previous":{"title":"Typescript 联合类型","level":"1.3.4","depth":2,"path":"basic/union.md","ref":"basic/union.md","articles":[]},"dir":"ltr"},"config":{"plugins":["popup","insert-logo","-lunr","-search","search-pro","github","chapter-fold","flexible-alerts","splitter","code","todo","emphasize","-sharing","sharing-plus","auto-scroll-table","custom-favicon","lightbox","anchor-navigation-ex","tbfed-pagefooter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy ruizhengyun.cn 2019","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"emphasize":{},"github":{"url":"https://github.com/ruizhengyun/typescript-note"},"todo":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"favicon":"http://ruizhengyun.cn/images/wx/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"custom-favicon":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"},"comment":{"label":"Comment","icon":"fa fa-comments","className":"info"}},"sharing":{"qq":true,"qzone":false,"weibo":false,"douban":false,"all":["qq","qzone","weibo","douban"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 66px; min-height: 66px","url":"http://ruizhengyun.cn/images/wx/logo.png"}},"theme":"default","author":"ruizhengyun <ruizhengyun@gmail.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Typescript 小书","language":"zh-hans","links":{"sidebar":{"我的博客":"http://ruizhengyun.cn/","我的小书":"http://ruizhengyun.cn/book"}},"gitbook":"3.2.3","description":"Typescript 知识梳理"},"file":{"path":"basic/assertion.md","mtime":"2019-07-20T12:37:39.863Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-10T06:54:29.966Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

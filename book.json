@@ -1,21 +1,22 @@
 {
-  "title": "typescript-tutorial",
-  "description": "近3年，这家伙很火。🔥 到什么程度？一度没朋友，一度让我心头热了（冷笑话）",
+  "title": "Typescript 小书",
+  "description": "Typescript 知识梳理",
   "author": "ruizhengyun <ruizhengyun@gmail.com>",
   "language": "zh-hans",
   "gitbook": "3.2.3",
   "links": {
     "sidebar": {
-      "我的博客": "http://ruizhengyun.cn/blog"
+      "我的博客": "http://ruizhengyun.cn/",
+      "我的小书": "http://ruizhengyun.cn/book"
     }
   },
   "plugins": [
+    "popup",
     "insert-logo",
     "-lunr",
     "-search",
     "search-pro",
     "github",
-    
     "chapter-fold",
     "flexible-alerts",
     "splitter",
@@ -24,19 +25,19 @@
     "emphasize",
     "-sharing",
     "sharing-plus",
-    "donate",
     "auto-scroll-table",
     "custom-favicon",
     "lightbox",
-    "anchor-navigation-ex"
+    "anchor-navigation-ex",
+    "tbfed-pagefooter"
   ],
   "pluginsConfig": {
-    "favicon": "http://ruizhengyun.cn/tutorial/typescript/assets/favicon.ico",
+    "favicon": "http://ruizhengyun.cn/images/wx/favicon.ico",
     "github": {
-      "url": "https://github.com/ruizhengyun/typescript-tutorial"
+      "url": "https://github.com/ruizhengyun/typescript-note"
     },
     "insert-logo": {
-      "url": "http://ruizhengyun.cn/tutorial/typescript/assets/logo.png",
+      "url": "http://ruizhengyun.cn/images/wx/logo.png",
       "style": "background: none; max-height: 66px; min-height: 66px"
     },
     "sharing": {
@@ -59,13 +60,6 @@
         "className": "info"
       }
     },
-    "donate": {
-      "wechat": "http://ruizhengyun.cn/blog/images/sns-qrcode.jpg",
-      "title": "如果对你有用，稍稍打赏，以此鼓励吧",
-      "button": "赏作者",
-      "wechatStyle": "background-color:green;",
-      "wechatText": "微信打赏"
-    },
     "anchor-navigation-ex": {
       "associatedWithSummary":false,
       "showLevel":true,
@@ -77,6 +71,11 @@
         "level2Icon": "fa fa-hand-o-right",
         "level3Icon": "fa fa-hand-o-right"
       }
+    },
+    "tbfed-pagefooter": {
+      "copyright":"Copyright &copy ruizhengyun.cn 2019",
+      "modify_label": "修订时间：",
+      "modify_format": "YYYY-MM-DD HH:mm:ss"
     }
   }
 }

@@ -1,0 +1,848 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Typescript 函数类型 · Typescript 小书</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ruizhengyun <ruizhengyun@gmail.com>">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="built_in_objects.html" />
+    
+    
+    <link rel="prev" href="array.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://ruizhengyun.cn/" target="_blank" class="custom-link">我的博客</a>
+        </li>
+    
+        
+        <li>
+            <a href="http://ruizhengyun.cn/book" target="_blank" class="custom-link">我的小书</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Typescript 小书入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction/">
+            
+                <a href="../introduction/">
+            
+                    
+                    扫盲篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../introduction/why.html">
+            
+                <a href="../introduction/why.html">
+            
+                    
+                    Typescript 为什么选择她
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../introduction/introduction.html">
+            
+                <a href="../introduction/introduction.html">
+            
+                    
+                    Typescript 精彩履历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../introduction/env.html">
+            
+                <a href="../introduction/env.html">
+            
+                    
+                    Typescript 的成长环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    基础篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="basic.html">
+            
+                <a href="basic.html">
+            
+                    
+                    Typescript 基础类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="advanced.html">
+            
+                <a href="advanced.html">
+            
+                    
+                    Typescript 进阶类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="inference.html">
+            
+                <a href="inference.html">
+            
+                    
+                    Typescript 类型推论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="union.html">
+            
+                <a href="union.html">
+            
+                    
+                    Typescript 联合类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="assertion.html">
+            
+                <a href="assertion.html">
+            
+                    
+                    Typescript 类型断言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="object_interfaces.html">
+            
+                <a href="object_interfaces.html">
+            
+                    
+                    Typescript 对象类型-接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="array.html">
+            
+                <a href="array.html">
+            
+                    
+                    Typescript 数组类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.8" data-path="function.html">
+            
+                <a href="function.html">
+            
+                    
+                    Typescript 函数类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="built_in_objects.html">
+            
+                <a href="built_in_objects.html">
+            
+                    
+                    Typescript 内置对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../advanced/">
+            
+                <a href="../advanced/">
+            
+                    
+                    进阶
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../advanced/tuple.html">
+            
+                <a href="../advanced/tuple.html">
+            
+                    
+                    Typescript 元祖
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../advanced/enum.html">
+            
+                <a href="../advanced/enum.html">
+            
+                    
+                    Typescript 枚举
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../advanced/class.html">
+            
+                <a href="../advanced/class.html">
+            
+                    
+                    Typescript 类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../advanced/class_interfaces.html">
+            
+                <a href="../advanced/class_interfaces.html">
+            
+                    
+                    Typescript 类与接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../advanced/alias_string_literal.html">
+            
+                <a href="../advanced/alias_string_literal.html">
+            
+                    
+                    Typescript 别名和字符串字面量类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../advanced/generics.html">
+            
+                <a href="../advanced/generics.html">
+            
+                    
+                    Typescript 泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../advanced/declaration_files.html">
+            
+                <a href="../advanced/declaration_files.html">
+            
+                    
+                    Typescript 声明文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../advanced/declaration_files_write.html">
+            
+                <a href="../advanced/declaration_files_write.html">
+            
+                    
+                    Typescript 书写声明合并
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../action/">
+            
+                <a href="../action/">
+            
+                    
+                    实战篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../file/">
+            
+                <a href="../file/">
+            
+                    
+                    附件篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Typescript 函数类型</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x62DB;&#x5F0F;&#x4E00;&#xFF1A;&#x51FD;&#x6570;&#x58F0;&#x660E;&#xFF08;function-declaration&#xFF09;"><b>1. </b>&#x62DB;&#x5F0F;&#x4E00;&#xFF1A;&#x51FD;&#x6570;&#x58F0;&#x660E;&#xFF08;function declaration&#xFF09;</a></li><li><span class="title-icon "></span><a href="#&#x62DB;&#x5F0F;&#x4E8C;&#xFF1A;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;&#xFF08;function-expression&#xFF09;"><b>2. </b>&#x62DB;&#x5F0F;&#x4E8C;&#xFF1A;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;&#xFF08;function expression&#xFF09;</a></li><li><span class="title-icon "></span><a href="#&#x62DB;&#x5F0F;&#x4E09;&#xFF1A;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#xFF08;interfaces&#xFF09;"><b>3. </b>&#x62DB;&#x5F0F;&#x4E09;&#xFF1A;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#xFF08;interfaces&#xFF09;</a></li><li><span class="title-icon "></span><a href="#&#x53EF;&#x9009;&#x53C2;&#x6570;"><b>4. </b>&#x53EF;&#x9009;&#x53C2;&#x6570;</a></li><li><span class="title-icon "></span><a href="#&#x5269;&#x4F59;&#x53C2;&#x6570;"><b>5. </b>&#x5269;&#x4F59;&#x53C2;&#x6570;</a></li><li><span class="title-icon "></span><a href="#&#x9ED8;&#x8BA4;&#x503C;"><b>6. </b>&#x9ED8;&#x8BA4;&#x503C;</a></li><li><span class="title-icon "></span><a href="#&#x91CD;&#x8F7D;"><b>7. </b>&#x91CD;&#x8F7D;</a></li><li><span class="title-icon "></span><a href="#you-can"><b>8. </b>You can</a></li></ul></div><a href="#&#x62DB;&#x5F0F;&#x4E00;&#xFF1A;&#x51FD;&#x6570;&#x58F0;&#x660E;&#xFF08;function-declaration&#xFF09;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p>&#x51FD;&#x6570;&#xFF0C;&#x4E00;&#x7B49;&#x516C;&#x6C11;&#xFF08;&#x6EE1;&#x6EE1;&#x7684;&#x81EA;&#x8C6A;&#x611F;&#xFF09;&#x3002;</p>
+<h1 id="&#x62DB;&#x5F0F;&#x4E00;&#xFF1A;&#x51FD;&#x6570;&#x58F0;&#x660E;&#xFF08;function-declaration&#xFF09;"><a name="&#x62DB;&#x5F0F;&#x4E00;&#xFF1A;&#x51FD;&#x6570;&#x58F0;&#x660E;&#xFF08;function-declaration&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x62DB;&#x5F0F;&#x4E00;&#xFF1A;&#x51FD;&#x6570;&#x58F0;&#x660E;&#xFF08;function-declaration&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x62DB;&#x5F0F;&#x4E00;&#xFF1A;&#x51FD;&#x6570;&#x58F0;&#x660E;&#xFF08;function declaration&#xFF09;</h1>
+<pre><code class="lang-typescript"><span class="hljs-comment">// function.ts</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span> </span>{
+    <span class="hljs-keyword">return</span> x + y;
+}
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x5BF9;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x7684;&#x8BA4;&#x8BC6;&#xFF0C;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x591A;&#x4E00;&#x4E2A;&#x548C;&#x5C11;&#x4E00;&#x4E2A;&#xFF08;&#x6CA1;&#x6709;&#x5BF9;&#x53C2;&#x6570;&#x505A;&#x53EF;&#x9009;&#x64CD;&#x4F5C;&#xFF09;&#x5E94;&#x8BE5;&#x4E5F;&#x4E0D;&#x884C;&#x3002;&#x8BD5;&#x4E00;&#x4E0B;</p>
+<pre><code class="lang-typescript"><span class="hljs-comment">// function2.ts</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum2</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span> </span>{
+    <span class="hljs-keyword">return</span> x + y;
+}
+
+sum2(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);
+
+sum2(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+
+sum2(<span class="hljs-number">1</span>);
+
+<span class="hljs-comment">// 0.0.6/function2.ts:7:12 - error TS2554: Expected 2 arguments, but got 3.</span>
+    <span class="hljs-comment">// 7 sum2(1, 2, 3);</span>
+
+<span class="hljs-comment">// 0.0.6/function2.ts:9:1 - error TS2554: Expected 2 arguments, but got 1.</span>
+    <span class="hljs-comment">// 9 sum2(1);</span>
+
+<span class="hljs-comment">// 0.0.6/function2.ts:1:26</span>
+    <span class="hljs-comment">// 1 function sum2(x: number, y: number): number {</span>
+    <span class="hljs-comment">// An argument for &apos;y&apos; was not provided.</span>
+</code></pre>
+<p>&#x63D0;&#x793A;&#x5F88;&#x660E;&#x663E;&#x4E86;&#xFF0C;&#x5C31;&#x662F;&#x8BF4;&#x6211;&#x4EEC;&#x53C2;&#x6570;&#x591A;&#x4E86;&#x4E00;&#x4E2A;&#xFF0C;&#x53C2;&#x6570;&#x5C11;&#x4E86;&#x4E00;&#x4E2A;&#x3002;&#x603B;&#x7ED3;&#xFF0C;<strong>&#x51FD;&#x6570;&#x5BF9;&#x4E8E;&#x53C2;&#x6570;&#x7684;&#x4E2A;&#x6570;&#x662F;&#x4E0D;&#x5BB9;&#x4FEE;&#x6539;&#x7684;</strong>&#x3002;</p>
+<h1 id="&#x62DB;&#x5F0F;&#x4E8C;&#xFF1A;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;&#xFF08;function-expression&#xFF09;"><a name="&#x62DB;&#x5F0F;&#x4E8C;&#xFF1A;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;&#xFF08;function-expression&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x62DB;&#x5F0F;&#x4E8C;&#xFF1A;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;&#xFF08;function-expression&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x62DB;&#x5F0F;&#x4E8C;&#xFF1A;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;&#xFF08;function expression&#xFF09;</h1>
+<pre><code class="lang-typescript"><span class="hljs-comment">// function3.ts</span>
+<span class="hljs-keyword">const</span> sum3 = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span> </span>{
+    <span class="hljs-keyword">return</span> x + y;
+}
+</code></pre>
+<p>&#x4ECE;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x7ED3;&#x6784;&#x5206;&#x6790;&#xFF0C;<code>=</code> &#x53F3;&#x8FB9;&#xFF08;&#x2192;_&#x2192;&#xFF09;&#x5927;&#x5BB6;&#x90FD;&#x61C2;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x1F448;&#x5DE6;&#x8FB9;&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x6709;&#x70B9;&#x7A7A;&#xFF0C;&#x662F;&#x4E0D;&#x662F;&#x5F97;&#x6709;&#x4E2A;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;&#x4E0B;&#x5462;&#xFF1F;&#x90A3;&#x53C8;&#x8BE5;&#x5982;&#x4F55;&#x5B9A;&#x4E49;&#xFF1F;</p>
+<pre><code class="lang-typescript"><span class="hljs-comment">// function4.ts</span>
+<span class="hljs-keyword">const</span> sum4: (x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span>) =&gt; <span class="hljs-built_in">number</span> = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span> </span>{
+    <span class="hljs-keyword">return</span> x + y;
+}
+</code></pre>
+<p>&#x6765;&#x770B; <code>=</code> &#x5DE6;&#x8FB9;&#xFF0C;&#x591A;&#x4E86; <code>: (x: number, y: number) =&gt; number</code>&#xFF0C;&#x8FD9;&#x91CC;&#x7684; <code>=&gt;</code> &#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x719F;&#x6089;&#x7684; ES6 &#x7BAD;&#x5934;&#x51FD;&#x6570;&#x4E2D;&#x7684; <code>=&gt;</code>&#x3002;Typescript &#x4E2D;&#x7684; <code>=&gt;</code> &#x662F;&#x7528;&#x6765;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x7684;&#xFF0C;&#x51FD;&#x6570;&#x5DE6;&#x8FB9;&#x662F;&#x662F;&#x8F93;&#x5165;&#x7C7B;&#x578B;&#xFF08;&#x7528; <code>()</code> &#x62EC;&#x8D77;&#x6765;&#xFF09;&#xFF0C;&#x53F3;&#x4FA7;&#x662F;&#x8F93;&#x51FA;&#x7C7B;&#x578B;&#x3002;&#x5176;&#x5B9E;&#xFF0C;&#x591A;&#x51FA;&#x7684;&#x5185;&#x5BB9;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x624B;&#x52A8;&#x6DFB;&#x52A0;&#x7684;&#xFF08;&#x6666;&#x6DA9;&#x96BE;&#x61C2;&#xFF09;&#xFF0C;&#x56E0;&#x4E3A;&#x901A;&#x8FC7;&#x8D4B;&#x503C;&#x64CD;&#x4F5C;&#x4E5F;&#x53EF;&#x4EE5;&#x5C06;&#x7C7B;&#x578B;&#x63A8;&#x8BBA;&#x51FA;&#x6765;&#xFF08;&#x6709;&#x79CD;&#x82E5;&#x4E0D;&#x81EA;&#x5BAB;&#x4EA6;&#x53EF;&#x6210;&#x529F;&#x7684;&#x610F;&#x5473;&#xFF0C;&#x54C8;&#x54C8;&#xFF09;&#x3002;</p>
+<h1 id="&#x62DB;&#x5F0F;&#x4E09;&#xFF1A;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#xFF08;interfaces&#xFF09;"><a name="&#x62DB;&#x5F0F;&#x4E09;&#xFF1A;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#xFF08;interfaces&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x62DB;&#x5F0F;&#x4E09;&#xFF1A;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#xFF08;interfaces&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x62DB;&#x5F0F;&#x4E09;&#xFF1A;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#xFF08;interfaces&#xFF09;</h1>
+<pre><code class="lang-typescript"><span class="hljs-comment">// function5.ts</span>
+<span class="hljs-keyword">interface</span> Function5 {
+    (x: <span class="hljs-built_in">string</span>, y: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">boolean</span>
+}
+
+<span class="hljs-keyword">let</span> <span class="hljs-function">function5: <span class="hljs-title">Function5</span> = (<span class="hljs-params">x: <span class="hljs-built_in">string</span>, y: <span class="hljs-built_in">string</span></span>) =&gt; </span>{
+    <span class="hljs-keyword">return</span> x.search(y) &gt; <span class="hljs-number">-1</span>;
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4F8B;&#x5B50;&#x662F;&#x7528;&#x63A5;&#x53E3;&#x7684;&#x5F62;&#x5F0F;&#x6765;&#x52A0;&#x6301; ES6 &#x7684;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#xFF0C;&#x68D2;&#x68D2;&#x7684;&#x3002;</p>
+<h1 id="&#x53EF;&#x9009;&#x53C2;&#x6570;"><a name="&#x53EF;&#x9009;&#x53C2;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x53EF;&#x9009;&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x53EF;&#x9009;&#x53C2;&#x6570;</h1>
+<p>&#x8FD9;&#x4E2A;&#x548C;&#x4E0A;&#x7BC7;&#x63A5;&#x53E3;&#x7C7B;&#x578B;&#x4E00;&#x6837;&#x7684;&#x65B9;&#x5F0F;</p>
+<pre><code class="lang-typescript"><span class="hljs-comment">// function6.ts</span>
+<span class="hljs-keyword">const</span> showMyName = (firstName: <span class="hljs-built_in">string</span>, lastName?: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">string</span> =&gt; {
+    <span class="hljs-keyword">if</span>(lastName) {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${firstName}</span><span class="hljs-subst">${lastName}</span>`</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> firstName;
+    }
+}
+<span class="hljs-built_in">console</span>.log(showMyName(<span class="hljs-string">&apos;pr&apos;</span>));
+<span class="hljs-built_in">console</span>.log(showMyName(<span class="hljs-string">&apos;&#x6C5F;&#x6E56;&apos;</span>, <span class="hljs-string">&apos;&#x518D;&#x89C1;&apos;</span>));
+</code></pre>
+<p>&#x7F16;&#x8BD1;&#x540E;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// function6.js</span>
+<span class="hljs-keyword">var</span> showMyName = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">firstName, lastName</span>) </span>{
+    <span class="hljs-keyword">if</span> (lastName) {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span> + firstName + lastName;
+    }
+    <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> firstName;
+    }
+};
+<span class="hljs-built_in">console</span>.log(showMyName(<span class="hljs-string">&apos;pr&apos;</span>));
+<span class="hljs-built_in">console</span>.log(showMyName(<span class="hljs-string">&apos;&#x6C5F;&#x6E56;&apos;</span>, <span class="hljs-string">&apos;&#x518D;&#x89C1;&apos;</span>));
+</code></pre>
+<blockquote>
+<p>&#x95EE;&#xFF1A;&#x53EF;&#x9009;&#x53C2;&#x6570;&#x540E;&#x9762;&#x8FD8;&#x80FD;&#x52A0;&#x53C2;&#x6570;&#xFF08;&#x5FC5;&#x9009;&#x53C2;&#x6570;&#xFF09;&#x4E48;&#xFF1F;</p>
+</blockquote>
+<pre><code class="lang-typescript"><span class="hljs-comment">// function7.ts</span>
+<span class="hljs-keyword">const</span> showMyName7 = (firstName?: <span class="hljs-built_in">string</span>, lastName: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">string</span> =&gt; {
+    <span class="hljs-keyword">if</span>(firstName) {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${firstName}</span><span class="hljs-subst">${lastName}</span>`</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> lastName;
+    }
+}
+
+<span class="hljs-comment">// 0.0.6/function7.ts:1:42 - error TS1016: A required parameter cannot follow an optional parameter.</span>
+    <span class="hljs-comment">// 1 const showMyName7 = (firstName?: string, lastName: string): string =&gt; {</span>
+</code></pre>
+<p>&#x62A5;&#x9519;&#x7684;&#x539F;&#x56E0;&#x662F;<strong>&#x53EF;&#x9009;&#x53C2;&#x6570;&#x540E;&#x9762;&#x4E0D;&#x80FD;&#x518D;&#x653E;&#x53C2;&#x6570;&#xFF08;&#x5FC5;&#x9009;&#xFF09;</strong>&#x3002;</p>
+<h1 id="&#x5269;&#x4F59;&#x53C2;&#x6570;"><a name="&#x5269;&#x4F59;&#x53C2;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x5269;&#x4F59;&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>5. &#x5269;&#x4F59;&#x53C2;&#x6570;</h1>
+<p>&#x6211;&#x4EEC;&#x77E5;&#x9053; ES6 &#x6709; <code>rest</code> &#x53C2;&#x6570;&#xFF08;&#x5F62;&#x5F0F;&#x662F; <code>...rest</code> &#xFF09;, &#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x51FD;&#x6570;&#x7684;&#x591A;&#x4F59;&#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528;arguments&#x5BF9;&#x8C61;&#x4E86;&#x3002;&#x90A3; Typescript &#x4E2D;&#x7684; <code>rest</code> &#x662F;&#x5426;&#x4E5F;&#x662F;&#x5982;&#x6B64;&#x5462;&#xFF1F;</p>
+<pre><code class="lang-typescript"><span class="hljs-comment">// function8.ts</span>
+<span class="hljs-comment">// function8.ts</span>
+<span class="hljs-keyword">const</span> push = (array: <span class="hljs-built_in">any</span>[], ...rest: <span class="hljs-built_in">any</span>[]) =&gt; {
+    rest.forEach(r =&gt; {
+        array.push(r);
+    });
+}
+
+<span class="hljs-keyword">let</span> arr = [<span class="hljs-literal">false</span>];
+push(arr, <span class="hljs-string">&apos;1&apos;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+
+<span class="hljs-keyword">const</span> push1 = (array: <span class="hljs-built_in">any</span>[], ...rest: <span class="hljs-built_in">any</span>[], x: <span class="hljs-built_in">number</span>) =&gt; {
+    rest.forEach(r =&gt; {
+        array.push(r);
+    });
+    rest.push(x);
+}
+
+<span class="hljs-comment">// 0.0.6/function8.ts:11:30 - error TS1014: A rest parameter must be last in a parameter list.</span>
+    <span class="hljs-comment">// 11 const push1 = (array: any[], ...rest: any[], x: number) =&gt; {</span>
+</code></pre>
+<p>&#x53C2;&#x6570; <code>array</code> &#x548C; <code>..rest</code> &#x6211;&#x4EEC;&#x90FD;&#x5B9A;&#x4E49;&#x4E86;&#x7C7B;&#x578B;&#xFF0C;<code>...rest</code> &#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x3002;&#x53E6;&#x5916;&#xFF0C;<strong>&#x5269;&#x4F59;&#x53C2;&#x6570;&#x548C;&#x53EF;&#x9009;&#x53C2;&#x6570;&#x540E;&#x9762;&#x90FD;&#x4E0D;&#x80FD;&#x518D;&#x6709;&#x53C2;&#x6570;</strong>&#x3002;</p>
+<h1 id="&#x9ED8;&#x8BA4;&#x503C;"><a name="&#x9ED8;&#x8BA4;&#x503C;" class="anchor-navigation-ex-anchor" href="#&#x9ED8;&#x8BA4;&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a>6. &#x9ED8;&#x8BA4;&#x503C;</h1>
+<p>ES6 &#x4E2D;&#x6709;&#x7ED9;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x6DFB;&#x52A0;&#x9ED8;&#x8BA4;&#x503C;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x90A3; Typescript &#x5982;&#x679C;&#x4E5F;&#x6709;&#x6B64;&#x7B49;&#x64CD;&#x4F5C;&#xFF0C;&#x90A3;&#x662F;&#x600E;&#x6837;&#x7684;&#xFF1F;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x503C;&#x7684;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x518D;&#x6709;&#x53C2;&#x6570;&#x4E48;&#xFF08;&#x662F;&#x4E0D;&#x662F;&#x88AB;&#x4E0D;&#x80FD;&#x518D;&#x6709;&#x53C2;&#x6570;&#x5413;&#x6015;&#x4E86;&#xFF09;&#xFF1F;</p>
+<pre><code class="lang-typescript"><span class="hljs-comment">// function9.ts</span>
+<span class="hljs-keyword">const</span> showMyNameAgain = (firstName: <span class="hljs-built_in">string</span> = <span class="hljs-string">&apos;pr&apos;</span>, lastName?: <span class="hljs-built_in">string</span>, ...rest: <span class="hljs-built_in">any</span>[]): <span class="hljs-built_in">string</span> =&gt; {
+    <span class="hljs-keyword">let</span> tmp: <span class="hljs-built_in">string</span> = <span class="hljs-string">&apos;&apos;</span>;
+    <span class="hljs-keyword">if</span>(rest.length) {
+        tmp = rest.join(<span class="hljs-string">&apos; &apos;</span>);
+    }
+    <span class="hljs-keyword">if</span>(lastName) {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${firstName}</span><span class="hljs-subst">${lastName}</span><span class="hljs-subst">${tmp}</span>`</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${firstName}</span><span class="hljs-subst">${tmp}</span>`</span>;
+    }
+}
+
+<span class="hljs-built_in">console</span>.log(showMyNameAgain());
+<span class="hljs-built_in">console</span>.log(showMyNameAgain(<span class="hljs-string">&apos;&#x80D6;&#x82AE;&apos;</span>,<span class="hljs-string">&apos;&#xFF0C;&#x7537;&apos;</span>, <span class="hljs-string">&apos;&#x4ECA;&#x5E74;&apos;</span>, <span class="hljs-number">30</span>));
+</code></pre>
+<p>&#x7F16;&#x8BD1;&#x540E;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// function9.js</span>
+<span class="hljs-keyword">var</span> showMyNameAgain = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">firstName, lastName</span>) </span>{
+    <span class="hljs-keyword">if</span> (firstName === <span class="hljs-keyword">void</span> <span class="hljs-number">0</span>) { firstName = <span class="hljs-string">&apos;pr&apos;</span>; }
+    <span class="hljs-keyword">var</span> rest = [];
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> _i = <span class="hljs-number">2</span>; _i &lt; <span class="hljs-built_in">arguments</span>.length; _i++) {
+        rest[_i - <span class="hljs-number">2</span>] = <span class="hljs-built_in">arguments</span>[_i];
+    }
+    <span class="hljs-keyword">var</span> tmp = <span class="hljs-string">&apos;&apos;</span>;
+    <span class="hljs-keyword">if</span> (rest.length) {
+        tmp = rest.join(<span class="hljs-string">&apos; &apos;</span>);
+    }
+    <span class="hljs-keyword">if</span> (lastName) {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span> + firstName + lastName + tmp;
+    }
+    <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span> + firstName + tmp;
+    }
+};
+<span class="hljs-built_in">console</span>.log(showMyNameAgain()); <span class="hljs-comment">// pr</span>
+<span class="hljs-built_in">console</span>.log(showMyNameAgain(<span class="hljs-string">&apos;&#x80D6;&#x82AE;&apos;</span>, <span class="hljs-string">&apos;&#xFF0C;&#x7537;&apos;</span>, <span class="hljs-string">&apos;&#x4ECA;&#x5E74;&apos;</span>, <span class="hljs-number">30</span>)); <span class="hljs-comment">// &#x80D6;&#x82AE;&#xFF0C;&#x7537;&#x4ECA;&#x5E74; 30</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x4E0A;&#x9762;&#x4F8B;&#x5B50;&#x53EF;&#x89C1;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E0E; ES6 &#x8D4B;&#x503C;&#x65B9;&#x5F0F;&#x65E0;&#x5F02;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x53D1;&#x73B0;<strong>&#x5269;&#x4F59;&#x53C2;&#x6570;&#x53EF;&#x653E;&#x5728;&#x53EF;&#x9009;&#x53C2;&#x6570;&#x540E;</strong>&#x3002;</p>
+<h1 id="&#x91CD;&#x8F7D;"><a name="&#x91CD;&#x8F7D;" class="anchor-navigation-ex-anchor" href="#&#x91CD;&#x8F7D;"><i class="fa fa-link" aria-hidden="true"></i></a>7. &#x91CD;&#x8F7D;</h1>
+<p>&#x91CD;&#x8F7D;&#x7684;&#x610F;&#x601D;&#x4E0D;&#x662F;&#x91CD;&#x65B0;&#x8F7D;&#x5165;&#xFF0C;&#x8FD9;&#x513F;&#x4E0D;&#x53EF;&#x671B;&#x6587;&#x751F;&#x4E49;&#x3002;&#x5B9E;&#x9645;&#x610F;&#x601D;&#x662F;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x6570;&#x91CF;&#x6216;&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x505A;&#x51FA;&#x4E0D;&#x540C;&#x7684;&#x5904;&#x7406;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#x6709;&#x8FD9;&#x4E2A;&#x4E00;&#x4E2A;&#x573A;&#x666F;&#xFF1A;&#x4F20;&#x5165;&#x6570;&#x5B57;&#x5C31;&#x4E58;&#x4EE5;10&#x5E76;&#x8FD4;&#x56DE;&#x6570;&#x5B57;&#xFF0C;&#x4F20;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x5C31;&#x5728;&#x5B83;&#x524D;&#x9762;&#x52A0;&#x4E0A; <code>hello</code>&#x5E76;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5148;&#x5206;&#x6790;&#x4E0B;&#x6CE8;&#x610F;&#x70B9;</p>
+<ul>
+<li>&#x8F93;&#x51FA;&#x503C;&#x7C7B;&#x578B;&#x9700;&#x540C;&#x8F93;&#x5165;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E00;&#x81F4;&#xFF08;&#x7528;&#x5230;&#x8054;&#x5408;&#x7C7B;&#x578B;&#xFF09;&#xFF1B;</li>
+<li>&#x6839;&#x636E;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x505A;&#x4E0D;&#x540C;&#x64CD;&#x4F5C;&#x5904;&#x7406;&#xFF08;&#x7528;&#x5230;&#x7C7B;&#x578B;&#x5224;&#x65AD;&#xFF09;&#xFF1B;</li>
+</ul>
+<pre><code class="lang-typescript"><span class="hljs-comment">// function10.ts</span>
+<span class="hljs-keyword">const</span> chongzai = (x: <span class="hljs-built_in">number</span> | <span class="hljs-built_in">string</span>): <span class="hljs-built_in">number</span> | <span class="hljs-built_in">string</span> =&gt; {
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> x === <span class="hljs-string">&apos;string&apos;</span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">`hello, <span class="hljs-subst">${x}</span>`</span>;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> x === <span class="hljs-string">&apos;number&apos;</span>) {
+        <span class="hljs-keyword">return</span> x * <span class="hljs-number">10</span>;
+    }
+}
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x4F8B;&#x5B50;&#x8FD9;&#x4E48;&#x5199;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x662F;&#xFF0C;&#x6709;&#x4E00;&#x70B9;&#x4F3C;&#x4E4E;&#x6CA1;&#x4E25;&#x683C;&#x7EA6;&#x675F;&#x5C31;&#x662F;&#x7B2C;&#x4E00;&#x70B9;&#xFF08;<strong>&#x8F93;&#x51FA;&#x503C;&#x7C7B;&#x578B;&#x9700;&#x540C;&#x8F93;&#x5165;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E00;&#x81F4;&#xFF08;&#x7528;&#x5230;&#x8054;&#x5408;&#x7C7B;&#x578B;&#xFF09;</strong>&#xFF09;&#xFF0C;&#x4E0A;&#x9762;&#x4EE3;&#x7801; <code>return x * 10;</code> &#x6539;&#x4E3A; <code>x * 10 + &apos;&apos;;</code> &#x4E5F;&#x4E0D;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x4F46;&#x662F;&#x5E76;&#x4E0D;&#x7B26;&#x5408;&#x6211;&#x4EEC;&#x7684;&#x8981;&#x6C42;&#x3002;&#x6240;&#x4EE5;&#x5F97;&#x624B;&#x52A8;&#x7ED9;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;</p>
+<pre><code class="lang-typescript"><span class="hljs-comment">// function11.ts</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chongzai2</span>(<span class="hljs-params">x: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">string</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chongzai2</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chongzai2</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span> | <span class="hljs-built_in">string</span></span>): <span class="hljs-title">number</span> | <span class="hljs-title">string</span> </span>{
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> x === <span class="hljs-string">&apos;string&apos;</span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">`hello, <span class="hljs-subst">${x}</span>`</span>;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> x === <span class="hljs-string">&apos;number&apos;</span>) {
+        <span class="hljs-keyword">return</span> x * <span class="hljs-number">10</span>;
+    }
+}
+</code></pre>
+<p>&#x548B;&#x4E00;&#x770B;&#xFF0C;&#x600E;&#x4E48;&#x51FD;&#x6570; <code>chongzai2</code> &#x58F0;&#x660E;&#x4E86; 3 &#x6B21;&#x3002;&#x5176;&#x5B9E;&#x4E0D;&#x7136;&#xFF0C;&#x524D; 2 &#x6B21;&#x662F;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#xFF0C;&#x7B2C; 3 &#x6B21;&#x662F;&#x51FD;&#x6570;&#x5B9E;&#x73B0;&#x3002;</p>
+<p><a href="https://github.com/ruizhengyun/typescript-note/tree/feature_v0.0.6_20190624" target="_blank">&#x672C;&#x6B21;&#x4EE3;&#x7801; Github</a></p>
+<h1 id="you-can"><a name="you-can" class="anchor-navigation-ex-anchor" href="#you-can"><i class="fa fa-link" aria-hidden="true"></i></a>8. You can</h1>
+<p><a href="array.html">&#x4E0A;&#x4E00;&#x7BC7;&#xFF1A;Typescript &#x6570;&#x7EC4;&#x7C7B;&#x578B;</a></p>
+<p><a href="basic/built_in_objects.md">&#x4E0B;&#x4E00;&#x7BC7;&#xFF1A;Typescript &#x5185;&#x7F6E;&#x5BF9;&#x8C61;</a></p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ruizhengyun.cn 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-07-20 20:37:39
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="array.html" class="navigation navigation-prev " aria-label="Previous page: Typescript 数组类型">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="built_in_objects.html" class="navigation navigation-next " aria-label="Next page: Typescript 内置对象">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Typescript 函数类型","level":"1.3.8","depth":2,"next":{"title":"Typescript 内置对象","level":"1.3.9","depth":2,"path":"basic/built_in_objects.md","ref":"basic/built_in_objects.md","articles":[]},"previous":{"title":"Typescript 数组类型","level":"1.3.7","depth":2,"path":"basic/array.md","ref":"basic/array.md","articles":[]},"dir":"ltr"},"config":{"plugins":["popup","insert-logo","-lunr","-search","search-pro","github","chapter-fold","flexible-alerts","splitter","code","todo","emphasize","-sharing","sharing-plus","auto-scroll-table","custom-favicon","lightbox","anchor-navigation-ex","tbfed-pagefooter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy ruizhengyun.cn 2019","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"emphasize":{},"github":{"url":"https://github.com/ruizhengyun/typescript-note"},"todo":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"favicon":"http://ruizhengyun.cn/images/wx/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"custom-favicon":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"},"comment":{"label":"Comment","icon":"fa fa-comments","className":"info"}},"sharing":{"qq":true,"qzone":false,"weibo":false,"douban":false,"all":["qq","qzone","weibo","douban"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 66px; min-height: 66px","url":"http://ruizhengyun.cn/images/wx/logo.png"}},"theme":"default","author":"ruizhengyun <ruizhengyun@gmail.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Typescript 小书","language":"zh-hans","links":{"sidebar":{"我的博客":"http://ruizhengyun.cn/","我的小书":"http://ruizhengyun.cn/book"}},"gitbook":"3.2.3","description":"Typescript 知识梳理"},"file":{"path":"basic/function.md","mtime":"2019-07-20T12:37:39.949Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-10T06:54:29.966Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
