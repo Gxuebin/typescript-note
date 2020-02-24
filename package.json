@@ -1,7 +1,7 @@
 {
     "name": "typescript-note",
     "version": "1.0.0",
-    "description": "Typescript 入门",
+    "description": "Typescript 入门与进阶",
     "main": "index.js",
     "scripts": {
         "init": "gitbook init",
